@@ -201,3 +201,27 @@ if ($.fn.magnificPopup) {
 //         videoBlockIframe.attr('src', iframe.attr('src'));
 //     }
 // });
+
+$('.tabs__nav').find('a').click(function(e){
+    e.preventDefault();
+    var _this = $(this),
+        parent = _this.parent(),
+        className = 'active',
+        block = $(_this.attr('data-block')),
+        time = 300;
+
+    if(!parent.hasClass(className)){
+        parent.addClass(className);
+    }
+    parent.siblings().removeClass(className)
+        .each(function () {
+            var __this = $(this),
+                link = __this.find('a'),
+                block = $(link.attr('data-block'));
+            if(block[0]){
+                block.fadeOut(time)
+            }
+        });
+
+    block.delay(time).fadeIn(time)
+});

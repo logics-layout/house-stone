@@ -1,6 +1,190 @@
 mixin header(data)
-    .header(class!=data).not-styleLink
+    .header(class!=data).not-styleLink.active
 
+        .header-navigation(data-for="header-bottom-toggleMenuMbl")
+            .container
+                .text-center
+                    +img('assets/header/logo', 'png')
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+                    br
+
+                    ul.header-navigation__menu-list
+                        li: a(href="#"): span Каталог камня
+                        li: a(href="#"): span Изделия
+                        li: a(href="#"): span Услуги
+                    ul.header-navigation__menu-list
+                        li: a(href="#"): span Галерея работ
+                        li: a(href="#"): span О компании
+                        li: a(href="#"): span Акции
+                        li: a(href="#"): span Контакты
+
+        .header-navigation(data-for="header-bottom-toggleMenuMbl1")
+            .container
+                .text-center
+                    +img('assets/header/logo', 'png')
+                br
+                .row
+                    .col-lg-8
+                        ul.tabs__nav.tabs__nav_big
+                            li.active: a(href="#", data-block="#items1"): span Гранит
+                            li: a(href="#", data-block="#items2"): span Мрамор
+                            li: a(href="#", data-block="#items3"): span Изделия из камня
+                    .col-lg-4
+                        .header-navigation__form-search.text-right
+                            .form-search
+                                .form-search__inputs
+                                    input(placeholder="Поиск по каталогу").form-search__inputs-input.form-search__inputs-input_borderNot
+                                button.form-search__btn: +icon('search')
+
+                br
+                .tabs__content
+                    .tabs__content-item.active#items1
+                        .header-navigation__category-list
+                            ul
+                                li: a(href='#') Возрождение
+                                li: a(href='#') Габбро-Карелия
+                                li: a(href='#') Гранатовый Амфиболит
+                                li: a(href='#') Дымовский (Балтийский)
+                                li: a(href='#') Исетский
+                                li: a(href='#') Камбулатовский (Камбулакский)
+                                li: a(href='#') Лисья Горка
+                                li: a(href='#') Мансуровский
+                                li: a(href='#') Осеевский
+                                li: a(href='#') Сибирский (Ural Gray)
+                                li: a(href='#') Суховязский
+                                li: a(href='#') Южно-Султаевский
+                                li: a(href='#') Емельяновский (Rosso Toledo)
+                                li: a(href='#') Капустинский (Rosso Santiago)
+
+                            ul
+                                li: a(href="#") Междуреченский
+                                li: a(href="#") Покостовский (Grey Ukraine)
+                                li: a(href="#") Алмонд Мав (Almond Mauve)
+                                li: a(href="#") Баттерфляй Грин (Butterfly Green)
+                                li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
+                                li: a(href="#") Мапл Ред G-562 (Maple Red)
+                                li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
+                                li: a(href="#") Парпл Грин (Purple Green)
+                                li: a(href="#") Пич Ред G-687 (Peach Red)
+                                li: a(href="#") Роял Вайт G-603 (Royal White)
+                                li: a(href="#") Сансет Голд G-682 (Sunset Gold)
+                                li: a(href="#") Сезам Блэк G-654 (Padang Dark)
+                                li: a(href="#") Синди Грин (Cindy Green)
+                                li: a(href="#") Чайна Грин G-674 (China Green)
+                            ul
+                                li: a(href="#") Шанкси Блэк G-777 (Shanxi Black)
+                                li: a(href="#") Жельтау "Надежда"
+                                li: a(href="#") Жельтау-2
+                                li: a(href="#") Жельтау-5  Куртинский
+                                li: a(href="#") Сары Тас
+                                li: a(href="#") Абсолют Блэк (Absolute Black)
+                                li: a(href="#") Айвори Браун (Ivory Brown)
+                                li: a(href="#") Блэк Гэлэкси (Nero Star Galaxy)
+                                li: a(href="#") Империал Ред (Imperial Red)
+                                li: a(href="#") Кашмир Вайт (Kashmir White)
+                                li: a(href="#") Мультиколор Ред (Multicolor Red)
+                                li: a(href="#") Нью Империал Ред (New Imperial Red)
+                                li: a(href="#") Парадизо (Paradiso)
+                    .tabs__content-item#items2
+                        .header-navigation__category-list
+                            ul
+                                li: a(href='#') Возрождение
+                                li: a(href='#') Габбро-Карелия
+                                li: a(href='#') Гранатовый Амфиболит
+                                li: a(href='#') Дымовский (Балтийский)
+                                li: a(href='#') Исетский
+                                li: a(href='#') Камбулатовский (Камбулакский)
+                                li: a(href='#') Лисья Горка
+                                li: a(href='#') Мансуровский
+                                li: a(href='#') Осеевский
+                                li: a(href='#') Сибирский (Ural Gray)
+                                li: a(href='#') Суховязский
+                                li: a(href='#') Южно-Султаевский
+                                li: a(href='#') Емельяновский (Rosso Toledo)
+                                li: a(href='#') Капустинский (Rosso Santiago)
+
+                            ul
+                                li: a(href="#") Междуреченский
+                                li: a(href="#") Покостовский (Grey Ukraine)
+                                li: a(href="#") Алмонд Мав (Almond Mauve)
+                                li: a(href="#") Баттерфляй Грин (Butterfly Green)
+                                li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
+                                li: a(href="#") Мапл Ред G-562 (Maple Red)
+                                li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
+                                li: a(href="#") Парпл Грин (Purple Green)
+                                li: a(href="#") Пич Ред G-687 (Peach Red)
+                                li: a(href="#") Роял Вайт G-603 (Royal White)
+                                li: a(href="#") Сансет Голд G-682 (Sunset Gold)
+                                li: a(href="#") Сезам Блэк G-654 (Padang Dark)
+                                li: a(href="#") Синди Грин (Cindy Green)
+                                li: a(href="#") Чайна Грин G-674 (China Green)
+                    .tabs__content-item#items3
+                        .header-navigation__category-list
+                            ul
+                                li: a(href='#') Возрождение
+                                li: a(href='#') Габбро-Карелия
+                                li: a(href='#') Гранатовый Амфиболит
+                                li: a(href='#') Дымовский (Балтийский)
+                                li: a(href='#') Исетский
+                                li: a(href='#') Камбулатовский (Камбулакский)
+                                li: a(href='#') Лисья Горка
+                                li: a(href='#') Мансуровский
+                                li: a(href='#') Осеевский
+                                li: a(href='#') Сибирский (Ural Gray)
+                                li: a(href='#') Суховязский
+                                li: a(href='#') Южно-Султаевский
+                                li: a(href='#') Емельяновский (Rosso Toledo)
+                                li: a(href='#') Капустинский (Rosso Santiago)
+
+
+        .header__table
+            .header__table-cell.header-desktop
+                .header__sections
+                    .header__sections-section
+                        .mobile-list-anim.mobile-list-anim_menu
+                            input(type="checkbox", id="header-bottom-toggleMenuMbl").mobile-list-anim__input
+                            label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                                span.menu-mobile
+                                    span.menu-mobile-hamburger.one
+                                    span.menu-mobile-hamburger.two
+                                    span.menu-mobile-hamburger.three
+                                span.menu-text.hidden-xs-down Меню
+                    .header__sections-section
+                        .mobile-list-anim
+                            input.off(type="checkbox", id="header-bottom-toggleMenuMbl1").mobile-list-anim__input
+                            label.menuTopMobel(for="header-bottom-toggleMenuMbl1")
+                                span.menu-icon: +icon('directory')
+                                span.menu-text.hidden-xs-down Каталог
+
+            .header__table-cell.header__table-cell_logo
+                a(href="#").header__logo
+                    +img('assets/header/white-logo', 'png')
+
+            .header__table-cell.text-right
+                .header__sections
+                    .header__sections-section
+                            select.select-inner.select-inner_mobile
+                                option Челябинск
+                                option item 1
+                                option item 2
+                                option item 3
+                                option item 4
+                                option item 5
+                                option item 6
+                                option item 7
+                    .header__sections.text-right
+                        .header__sections-section
+                            a(href="#").header__phone
+                                span.header__phone-title Контакты
+                                span.db.header__phone-number 8-800-555-47-57
+
+                        .header__sections-section
+                            button.btn.btn-orange Заказать звонок
 
 
 

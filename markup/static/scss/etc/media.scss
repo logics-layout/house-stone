@@ -30,7 +30,27 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
-
+  .header {
+    &-navigation {
+      &__form-search {
+        padding-top: 11px;
+      }
+    }
+  }
+  .tabs{
+    &__nav{
+      &_big{
+        margin: 0 -8px;
+        li{
+          padding: 0 8px;
+          a{
+            font-size: 30px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {

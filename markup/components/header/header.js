@@ -26,7 +26,32 @@
 //         _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
 //     }
 // });
-//
+
+$(document).click(function(e) {
+    var target = $(e.target);
+
+    var toggle = $('.header-desktop').find('.mobile-list-anim__input'),
+        checkedToggle = toggle.filter(':checked');
+
+    toggle.each(function(){
+        var _this = $(this),
+            id = _this.attr('id'),
+            block = $('[data-for="'+id+'"]'),
+            checked = this.checked,
+            fn = 'removeClass';
+
+        if(checked){
+            fn = 'addClass';
+        }
+
+        // console.log(fn, block)
+        block[fn]('active');
+    });
+});
+
+
+
+
 // $('.header-bottom-nav a').click(function(e){
 //     if($(document).width() > 991) return true;
 //     var _this = $(this),

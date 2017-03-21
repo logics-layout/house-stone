@@ -3,7 +3,7 @@
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
 
-@mixin button-variant($color, $background, $border: transparent) {
+@mixin button-variant($color, $background) {
   color: $color;
   background-color: $background;
   border-color: $background;
@@ -15,7 +15,7 @@
   }
   &:hover {
     color: $color;
-    background-color: darken($background, 10%);
+    background-color: lighten($background, 10%);
     border-color: darken($background, 10%);
     &.shadow{
       text-shadow: none;
@@ -25,6 +25,10 @@
   &.active,
   .open > &.dropdown-toggle {
     color: $color;
+
+      //outline: 0;
+    box-shadow: inset 0 3px 10px rgba(0, 0, 0, 0.35);
+    background-color: $background;
     //background-color: darken($background, 10%);
     //    border-color: darken($border, 12%);
 
@@ -70,15 +74,15 @@
     &.active,
     .open > &.dropdown-toggle {
       color: $color;
-      background: darken($background, 15%);
-      border-color: darken($background, 15%);
+      background: $background;
+      border-color: $background;
 
       &:hover,
       &:focus,
       &.focus {
         color: $color;
-        background: darken($background, 25%);
-        border-color: darken($background, 25%);
+        background: $background;
+        border-color: $background;
       }
     }
     &:active,
@@ -93,56 +97,7 @@
       &:focus,
       &.focus {
         background-color: transparent;
-        border-color: $border;
-      }
-    }
-  }
-
-  &.white{
-    background: #fff;
-    border-color: #fff;
-    color: $background;
-    $color: $background;
-
-    &:focus,
-    &.focus {
-      color: $color;
-      background: darken(#fff, 20%);
-      border-color: darken(#fff, 20%);
-    }
-    &:hover {
-      color: $color;
-      background: darken(#fff, 15%);
-      border-color: darken(#fff, 15%);
-    }
-    &:active,
-    &.active,
-    .open > &.dropdown-toggle {
-      color: $color;
-      background: darken(#fff, 15%);
-      border-color: darken(#fff, 15%);
-
-      &:hover,
-      &:focus,
-      &.focus {
-        color: $color;
-        background: darken(#fff, 25%);
-        border-color: darken(#fff, 25%);
-      }
-    }
-    &:active,
-    &.active,
-    .open > &.dropdown-toggle {
-      background-image: none;
-    }
-    &.disabled,
-    &[disabled],
-    fieldset[disabled] & {
-      &:hover,
-      &:focus,
-      &.focus {
-        background-color: transparent;
-        border-color: $border;
+        border-color: transparent;
       }
     }
   }

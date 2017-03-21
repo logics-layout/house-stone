@@ -14,10 +14,9 @@
   touch-action: manipulation;
   cursor: pointer;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  //border: 3px solid transparent;
-  border: none;
+  border: 1px solid transparent;
   white-space: nowrap;
-  @include button-size(16px, 43px, $font-size-base, $line-height-base, $btn-border-radius-base);
+  @include button-size(14px, 28px, $font-size-base, $line-height-base, $btn-border-radius-base);
   @include user-select(none);
   //outline: none;
   position: relative;
@@ -26,17 +25,10 @@
   color: white;
 
   font-size: 16px;
-  font-weight: 400;
-  border-radius: 4px;
+  font-weight: 700;
 
-  &.btn-ttu{
-    text-transform: uppercase;
-  }
-  &.btn-width{
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  border-radius: 25px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 
   em{
     //font-size: 29px;
@@ -64,14 +56,6 @@
   &.focus {
     color: $btn-default-color;
     text-decoration: none;
-  }
-
-  &:active,
-  &.active {
-    outline: 0;
-    //background-image: none;
-    box-shadow: 0 0 0 #000;
-    transform: translateY(3px);
   }
 
   &.disabled,
@@ -107,10 +91,13 @@ a.btn {
 //  @include button-variant(#fff, #225faa);
 //}
 .btn-grey{
-  @include button-variant(#fff, #666);
+  @include button-variant(#fff, #737373);
 }
 .btn-orange{
-  @include button-variant(#1b1b1b, #ef9c00);
+  @include button-variant(#212121, $mainColor);
+}
+.btn-white{
+  @include button-variant(#212121, #fff);
 }
 
 // Link buttons
@@ -152,6 +139,15 @@ a.btn {
   }
 }
 
+
+.btn-ttu{
+  text-transform: uppercase;
+}
+.btn-width{
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 // Button Sizes
 // --------------------------------------------------
