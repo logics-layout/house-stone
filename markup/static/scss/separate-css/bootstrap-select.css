@@ -31,7 +31,6 @@ select.selectpicker {
     color: #a7a7a7;
     border: 2px solid #cacaca;
     height: 34px;
-    font-family: 'Museo Sans Cyrl', sans-serif;
     font-weight: 100;
     outline: none;
     font-style: italic;
@@ -137,7 +136,6 @@ select.selectpicker {
   overflow: hidden;
   width: 100%;
   text-align: left;
-    font-size: 14px;
 }
 .bootstrap-select.btn-group .dropdown-toggle .caret {
   /*margin-top: -2px;*/
@@ -147,7 +145,6 @@ select.selectpicker {
 .bootstrap-select .bs-caret{
     text-align: center;
     font-weight: normal;
-    font-size: 15px;
     background-color: #656565;
     width: 22px;
     height: 22px;
@@ -244,7 +241,6 @@ select.selectpicker {
 }
 .bootstrap-select.btn-group .dropdown-menu li a span.text {
   display: inline-block;
-    font-size: 14px;
     margin: 0;
 }
 .bootstrap-select.btn-group .dropdown-menu li small {

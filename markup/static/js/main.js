@@ -262,3 +262,9 @@ $('.tabs__nav').find('a').click(function(e){
 
     block.delay(time).fadeIn(time)
 });
+
+$('.form-search_hidden').hover(function () {
+   $(this).addClass('active');
+}, function () {
+   $(this).removeClass('active');
+});

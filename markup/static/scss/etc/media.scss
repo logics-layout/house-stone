@@ -6,6 +6,20 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .filter{
+    &__sections{
+      &-title{
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .itemList{
+    &__section{
+      width: 20%;
+    }
+  }
   .arrow-beyond{
     .slick-arrow{
       &.slick-prev{
@@ -41,6 +55,69 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .table-inner{
+    &__tr{
+      display: block;
+      border-bottom: none !important;
+      +*{
+        border-top: 1px solid #eee !important;
+      }
+      color: #1a1b1b;
+      overflow: hidden;
+      padding: 20px 0;
+      >*{
+        display: inline-block;
+      }
+    }
+    &__td{
+      display: block;
+      //display: inline-block;
+      &.text-center{
+        text-align: left;
+      }
+      &_img{
+        width: 180px;
+        float: left;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .filter{
+    &__sections-section{
+      display: block;
+      padding-left: 0;
+    }
+    &__table{
+      display: block;
+      width: auto;
+      text-align: center;
+      margin: -10px -15px;
+      &-cell{
+        display: inline-block;
+        width: 100%;
+        padding: 10px 15px;
+        //display: inline-block;
+        //vertical-align: middle;
+        //width: 50%;
+        &__select{
+          width: 33.33%;
+        }
+      }
+      .form-search{
+        width: 100%;
+        &__inputs-input{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .itemList{
+    &__section{
+      width: 25%;
+    }
+  }
 
   .callback-footer{
     text-align: center;
@@ -85,10 +162,134 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
+  .table-inner{
+    display: table;
+    width: 100%;
+    &__thead{
+      display: table-header-group;
+    }
+    &__tbody{
+      display: table-row-group;
+      >*{
+        &:first-child{
+          >*{
+            border-top: 1px solid #dadada;
+          }
+        }
+        &:last-child{
+          >*{
+            border-bottom: 1px solid #dadada;
+            &:first-child{
+              border-bottom: 1px solid #dadada;
+            }
+            &:last-child{
+              border-bottom: 1px solid #dadada;
+            }
+          }
+        }
+        &:not(:last-child){
+          >*{
+            border-bottom: 1px dashed #dadada;
+          }
+        }
+        >*{
+          &:last-child{
+            border-right: 1px solid #dadada;
+          }
+          &:first-child{
+            border-left: 1px solid #dadada;
+          }
+        }
+      }
+      a{
+        transition: .1s;
+        position: relative;
+        &:hover{
+          box-shadow: 0 14px 24px rgba(0, 0, 0, 0.1);
+          transform: scale(1.02);
+          z-index: 1;
+          >*{
+            border-color: transparent !important;
+          }
+          .item-table__title{
+            color: #00a8ec;
+            border-bottom-color: #00a8ec;
+          }
+        }
+        .btn.btn-orange.btn-border{
+          color: #6c6c6c;
+          border-color: #737373;
+          padding: 8px 37px;
+          font-size: 14px;
+          &:hover{
+            color: #010101;
+            background-color: #ffb33b;
+            border-color: #ffb33b;
+          }
+        }
+      }
+    }
+    &__tr{
+      display: table-row;
+      color: #1a1b1b;
+      &_thead{
+        color: #212121;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: normal;
+        >*{
+          background-color: #ffb33b;
+        }
+      }
+    }
+    &__td{
+      display: table-cell;
+      vertical-align: middle;
+      padding: 18px;
+      &:nth-last-child(2){
+        padding-right: 0 !important;
+      }
+      &_notPadding{
+        padding: 0;
+        width: 15px;
+        border-bottom: none !important;
+        +*{
+          padding-left: 0 !important;
+        }
+      }
+      &_img{
+        width: 96px;
+      }
+    }
+  }
   .header {
     padding: 0 50px;
     padding-bottom: 53px;
     padding-top: 47px;
+  }
+  .form-search{
+    &_hidden{
+      pointer-events: none;
+      &.active{
+        .form-search__inputs{
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+      .form-search__inputs{
+        position: absolute;
+        right: -4px;
+        top: -4px;
+        opacity: 0;
+        @include tr;
+      }
+      .form-search__btn{
+        pointer-events: all;
+        position: relative;
+        top: 0;
+        right: 0;
+      }
+    }
   }
 }
 
@@ -117,6 +318,44 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .breadcrumb > li > * {
+    font-size: 14px;
+  }
+  .filter {
+    &__table {
+      &-cell {
+        width: 100%;
+        &__select {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  h1, .h1 {
+    font-size: 43px;
+    line-height: 50px;
+  }
+  html, body {
+    font-size: 14px;
+    line-height: 27px;
+  }
+
+  .item {
+    line-height: 20px;
+    font-size: 14px;
+    &__img{
+      margin-bottom: 13px;
+    }
+    &__titleSub{
+      font-size: 13px;
+    }
+  }
+  .itemList{
+    &__section{
+      width: 33.33%;
+    }
+  }
   .callback-footer{
     text-align: center;
     &__title{
@@ -182,6 +421,28 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .table-inner {
+    &__td {
+      &_img {
+        float: none;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  h2, .h2{
+    font-size: 22px;
+  }
+  h1, .h1 {
+    font-size: 38px;
+    line-height: 47px;
+  }
+
+  .itemList{
+    &__section{
+      width: 50%;
+    }
+  }
   .city{
     text-align: center;
     margin: 0 -15px;
