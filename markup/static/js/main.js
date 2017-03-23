@@ -268,3 +268,29 @@ $('.form-search_hidden').hover(function () {
 }, function () {
    $(this).removeClass('active');
 });
+
+function initYmaps() {
+    var coords = [52.32594308927015, 104.2421168088913];
+    var MapPlaces = new ymaps.Map('yamap', {
+        center: coords,
+        zoom: 12,
+        controls: ['zoomControl']
+    });
+    MapPlaces.behaviors.disable('scrollZoom');
+
+    collection = new ymaps.GeoObjectCollection(null,{
+        iconLayout: 'default#image',
+        iconImageHref: 'placemark.png',
+        iconImageSize: [101, 84],
+        iconImageOffset: [-31, -83]
+    });
+
+    MapPlaces.geoObjects.add(collection);
+
+    placemark = new ymaps.Placemark(coords);
+    collection.add(placemark);
+}
+
+try{
+    ymaps.ready(initYmaps);
+}catch (e){}

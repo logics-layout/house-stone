@@ -1,0 +1,177 @@
+extends main
+
+include ../components/item/item
+
+block head
+    - var headData = {title: "Каталог"}
+
+block content
+    .container
+        h1 Контакты компании
+
+        ul.tabs__nav.not-styleLink
+            li.active: a(href="#", data-block="#items11"): span: b Офис компании (шоу-рум)
+            li: a(href="#", data-block="#items22"): span: b Производство ООО «Дом Камня»
+            li: a(href="#", data-block="#items223"): span: b Реквизиты
+    hr.two
+    .container
+        //br
+        .tabs__content
+            .tabs__content-item.active#items11
+                .contacts.not-styleLink
+                    .contacts__sections
+                        .contacts__sections-section
+                            .contacts__item
+                                .contacts__item-icon: +icon('phone')
+                                .contacts__item-desc
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b Бесплатный номер
+                                        a(href='#').contacts__item-link: span 8-800-555-47-57
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b Бесплатный номер
+                                        a(href='#').contacts__item-link: span +7 (351) 247-11-57 (-58, -59)
+                                        br
+                                        a(href='#').contacts__item-link: span +7 (351) 260-63-68
+                                    span.contacts__item-title: b Сотовый телефон
+                                    a(href='#').contacts__item-link: span 8-800-555-47-57
+                        .contacts__sections-section
+                            .contacts__item
+                                .contacts__item-icon: +icon('email')
+                                .contacts__item-desc
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b Эл. почта отдела продаж
+                                        a(href='#').contacts__item-link.contacts__item-link_blue: span prod@domkam.ru
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b Эл. почта отдела поставок
+                                        a(href='#').contacts__item-link.contacts__item-link_blue: span log@domkam.ru
+
+                                    button.btn.btn-grey.btn-border.btn-input Написать нам письмо
+
+                        .contacts__sections-section
+                            .contacts__item
+                                .contacts__item-icon: +icon('map-label', '', 36,54)
+                                .contacts__item-desc
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b Адрес
+                                        span 454048, Челябинская область,
+                                            br
+                                            | Челябинск, ул. Воровского 15 а
+                                    .contacts__item-desc-section
+                                        span.contacts__item-title: b GPS-координаты
+                                        span Широта: 55.15375748
+                                        br
+                                        span Долгота: 61.39382733
+            .tabs__content-item#items22
+                p 1
+            .tabs__content-item#items223
+                p 2
+
+    hr.two
+    .container
+        h2 Наши менеджеры
+        br
+        .staff
+            .staff__setions.text-center
+                .staff__setions-section
+                    .staff__item
+                        .staff__item-img: +img('content/staff/1', 'png')
+                        .staff__item-desc
+                            .staff__item-desc-content
+                                .staff__item-name: b Коваль Александр
+                                .staff__item-post: i Менеджер отдела продаж
+                                .staff__item-text
+                                    a(href='#') prod1@domkam.ru
+                                    | &nbsp;доб. 111
+                                button.btn.staff__item-btn.btn-input Оставить отзыв
+                .staff__setions-section
+                    .staff__item
+                        .staff__item-img: +img('content/staff/2', 'png')
+                        .staff__item-desc
+                            .staff__item-desc-content
+                                .staff__item-name: b Коваль Александр
+                                .staff__item-post: i Менеджер отдела продаж
+                                .staff__item-text
+                                    a(href='#') prod1@domkam.ru
+                                    | &nbsp;доб. 111
+                                button.btn.staff__item-btn.btn-input Оставить отзыв
+                .staff__setions-section
+                    .staff__item
+                        .staff__item-img: +img('content/staff/3', 'png')
+                        .staff__item-desc
+                            .staff__item-desc-content
+                                .staff__item-name: b Коваль Александр
+                                .staff__item-post: i Менеджер отдела продаж
+                                .staff__item-text
+                                    a(href='#') prod1@domkam.ru
+                                    | &nbsp;доб. 111
+                                button.btn.staff__item-btn.btn-input Оставить отзыв
+                .staff__setions-section
+                    .staff__item
+                        .staff__item-img: +img('content/staff/4', 'png')
+                        .staff__item-desc
+                            .staff__item-desc-content
+                                .staff__item-name: b Коваль Александр
+                                .staff__item-post: i Менеджер отдела продаж
+                                .staff__item-text
+                                    a(href='#') prod1@domkam.ru
+                                    | &nbsp;доб. 111
+                                button.btn.staff__item-btn.btn-input Оставить отзыв
+                .staff__setions-section
+                    .staff__item
+                        .staff__item-img: +img('content/staff/5', 'png')
+                        .staff__item-desc
+                            .staff__item-desc-content
+                                .staff__item-name: b Коваль Александр
+                                .staff__item-post: i Менеджер отдела продаж
+                                .staff__item-text
+                                    a(href='#') prod1@domkam.ru
+                                    | &nbsp;доб. 111
+
+                                button.btn.staff__item-btn.btn-input Оставить отзыв
+
+    #yamap
+    br
+    .container.text-center
+        div(style="max-width: 100%;width: 706px;margin: 0 auto;")
+            p Стоимость доставки составляет от 2000 рублей по Челябинску и зависит от объема заказа. Возможен самовывоз и бесплатная доставка. ООО «Дом Камня» (ОГРН: 1067412005099).
+            p Регионы доставки: Челябинск, любой регион России и СНГ.
+            p Доставка собственным транспортом или любым из грузоперевозчиков: Автотрейдинг, Байкал-Сервис, Грузовозофф, Деловые линии, ПЭК и другие.
+
+block script
+    script(src='https://api-maps.yandex.ru/2.1/?lang=ru_RU')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

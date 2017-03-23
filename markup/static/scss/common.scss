@@ -20,7 +20,7 @@ html, body {
 
 .page__wrapper {
   min-height: 100%;
-  padding-bottom: 85px;
+  padding-bottom: 25px;
 
 }
 * html .page__wrapper {
@@ -173,4 +173,120 @@ body {
   &__nowrap{
     white-space: nowrap;
   }
+}
+
+
+.contacts{
+  &__item{
+    line-height: 30px;
+    display: table;
+    >*{
+      vertical-align: top;
+      display: table-cell;
+      +*{
+        padding-left: 22px;
+      }
+    }
+    &-desc-section{
+      margin-bottom: 15px;
+    }
+    &-title{
+      color: #212121;
+      display: block;
+    }
+    &-link{
+      color: #1a1b1b;
+      font-weight: 100;
+      //line-height: 34px;
+      span{
+        border-bottom: 1px solid transparent;
+      }
+      &:hover{
+        span{
+          border-bottom-color: rgba(26, 27, 27, 0.39);
+        }
+      }
+      &_blue{
+        color: #00a8ec;
+        span{
+          @include link-border-color(#00a8ec);
+        }
+      }
+    }
+  }
+  &__sections{
+    width: 100%;
+    font-size: 0;
+    &-section{
+      font-size: 16px;
+      display: inline-block;
+      vertical-align: top;
+      width: 33.33%;
+    }
+  }
+}
+
+.staff{
+  &__setions{
+    font-size: 0;
+    &-section{
+      display: inline-block;
+      width: 20%;
+      vertical-align: bottom;
+    }
+  }
+  &__item{
+    color: #1a1b1b;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 25px;
+    &-img{}
+    &-desc{
+      background-color: $mainColor;
+      padding: 30px 0;
+      padding-bottom: 39px;
+      position: relative;
+      &:after{
+        content: '';
+        display: block;
+        top: 0;
+        left: -300%;
+        width: 600%;
+        right: -300%;
+        height: 100%;
+        position: absolute;
+        background-color: $mainColor;
+      }
+      &-content{
+        position: relative;
+        z-index: 1;
+      }
+    }
+    &-name{}
+    &-post{
+      font-size: 13px;
+    }
+    &-text{
+      margin: 20px 0;
+    }
+    a{
+      color: inherit;
+      border-bottom-color: rgba(0, 0, 0, 0.26);
+    }
+    &-btn{
+      border: 3px solid white;
+      background-color: transparent;
+      color: #212121;
+      padding-left: 23px;
+      padding-right: 23px;
+      &:hover{
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+#yamap{
+  width: 100%;
+  height: 500px;
 }

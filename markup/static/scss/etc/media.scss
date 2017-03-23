@@ -6,6 +6,19 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+  .staff {
+    &__setions {
+      font-size: 0;
+      margin: -20px 0;
+      &-section {
+        display: inline-block;
+        width: 33.33%;
+        vertical-align: bottom;
+        padding: 20px 0;
+      }
+    }
+  }
+
   .filter{
     &__sections{
       &-title{
@@ -55,6 +68,20 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+
+  .contacts{
+    &__sections{
+      font-size: 0;
+      margin: -20px;
+      &-section{
+        display: inline-block;
+        font-size: 15px;
+        padding: 20px;
+        width: auto;
+      }
+    }
+  }
+
   .table-inner{
     &__tr{
       display: block;
@@ -294,6 +321,7 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
+
   .header {
     &-navigation {
       &__form-search {
@@ -318,6 +346,13 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .staff {
+    &__setions {
+      &-section {
+        width: 50%;
+      }
+    }
+  }
   .breadcrumb > li > * {
     font-size: 14px;
   }
@@ -417,10 +452,47 @@ body, html{
       }
     }
   }
-
+  #yamap{
+    height: 350px;
+  }
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .staff {
+    &__setions {
+      &-section {
+        width: 100%;
+      }
+    }
+  }
+  .tabs {
+    &__nav {
+      margin: 0 -16px;
+      li {
+        a {
+          padding: 13px 16px;
+          display: block;
+        }
+      }
+    }
+  }
+  .contacts{
+    &__sections{
+      display: table;
+      width: 100%;
+      margin: 0;
+      &-section{
+        display: table-row-group;
+        padding: 0;
+      }
+    }
+    &__item{
+      display: table-row;
+      >*{
+        padding-bottom: 30px;
+      }
+    }
+  }
   .table-inner {
     &__td {
       &_img {
