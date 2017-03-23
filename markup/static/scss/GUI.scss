@@ -30,6 +30,11 @@ a{
   }
 }
 
+.btn_footer{
+  width: 210px;
+  max-width: 100%;
+}
+
 .not-styleLink{
   a{
     border-bottom: none;
@@ -615,5 +620,44 @@ table{
   }
 }
 
+.slick-arrow{
+  @include btn-clear;
+  width: 43px;
+  height: 43px;
+  line-height: 55px;
+  background-color: #c1c1c1;
+  fill: #fff;
+  border-radius: 50%;
+  @include tr;
+  svg{
+    display: block;
+  }
+  &:hover{
+    background-color: #ffb33b;
+    fill: #000;
+  }
+  &.slick-prev{
+    padding: 0 14px;
+  }
+  &.slick-next{
+    padding: 0 17px;
+  }
+}
 
+.arrow-beyond{
+  .slick-arrow{
+    position: absolute;
+    top: 50%;
+    margin-top: -21.5px;
+    z-index: 1;
+    &.slick-prev{
+      right: 100%;
+      margin-right: 30px;
+    }
+    &.slick-next{
+      left: 100%;
+      margin-left: 30px;
+    }
+  }
+}
 

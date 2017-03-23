@@ -37,6 +37,49 @@ html(class="no-js", lang="ru")
 
             .page__buffer
         .page__footer
+
+            .container
+                .city.not-styleLink
+                    p.city__title Как нас найти:
+                    .city__list.arrow-beyond
+                        -for(var i = 0; i<10;i++)
+                            .city__list-section
+                                .city__item
+                                    .city__item-icon.hidden-xs-down: +icon('map-label')
+                                    .city__item-desc
+                                        p.city__item-title
+                                            span.city__item-title-icon.hidden-sm-up
+                                                +icon('map-label')
+                                                |&nbsp;&nbsp;
+                                            |Ханты-Мансийск
+                                        p.city__item-text 628007, г. Ханты-Мансийск, ул. Строителей, 12б,
+                                            br
+                                            a(href='#') 8 (800) 555-47-57
+                                            br
+                                            a(href='#').city__item-link: span prod@domkam.ru
+
+
+            .callback-footer
+                .container
+                    p.callback-footer__title Отправьте заявку
+                        br.hidden-md-up
+                        |на рассчет стоимости 
+                    p.callback-footer__titleSub прямо сейчас и получите подарок
+                    br
+                    .row
+                        .col-md-6.col-xs-12
+                            .form-group
+                                input(placeholder="Введите ваше имя").form-control
+                            .form-group
+                                input(placeholder="Номер телефона").form-control
+                            .form-group
+                                input(placeholder="Укажите вашу эл. почту").form-control
+                        .col-md-6.col-xs-12
+                            .form-group
+                                textarea(placeholder="Комментарий", style="height:120px").form-control
+                            button.btn.btn-borderBig.btn-black.btn-border.btn-input Отправить
+
+
             +footer()
 
         +modal()
@@ -50,6 +93,7 @@ html(class="no-js", lang="ru")
         script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
         script(src="%=static=%js/separate-js/dropdown.js" type="text/javascript")
         script(src="%=static=%js/separate-js/modal.js" type="text/javascript")
+        //script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
         //- start block script
         block script
         //- end block script

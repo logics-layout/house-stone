@@ -2,11 +2,142 @@
   background-size: cover;
   background-position: center;
   background-image: url('%=static=%assets/header/bg_inner.jpg');
-  padding: 0 50px;
-  padding-bottom: 53px;
-  padding-top: 47px;
   position: relative;
   color: #fff;
+
+  &-mobile{
+    .mobile-list-anim {
+      input[type="checkbox"] {
+        &:checked {
+          & ~ .menuTopMobel {
+            svg{
+              fill: $mainColor !important;
+            }
+            .menu-text {
+
+            }
+          }
+        }
+      }
+      svg{
+        pointer-events: none;
+        @include tr;
+      }
+    }
+    &__content{
+      display: table;
+      width: 100%;
+      border-bottom: 1px solid;
+      position: relative;
+      z-index: 1;
+      background-size: cover;
+      background-position: center;
+      background-image: url('%=static=%assets/header/bg_inner.jpg');
+      &-cell{
+        display: table-cell;
+        vertical-align: middle;
+        +*{
+          &:not(:last-child){
+            padding-left: 20px;
+          }
+          border-left: 1px solid;
+        }
+        &_icon{
+          width: 55px;
+        }
+      }
+      .mobile-list-anim{
+        .menuTopMobel{
+          width: 55px;
+          height: 55px;
+          text-align: center;
+          line-height: 55px;
+        }
+      }
+    }
+    &__phone{
+      color: #fff;
+      font-weight: 600;
+      display: block;
+      padding-right: 20px;
+    }
+    &__navigation{
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: 0;
+      overflow: auto;
+      padding-top: 55px;
+      display: none;
+      .form-search{
+        display: block;
+        width: 100%;
+        &__inputs{
+          input{
+            width: 100%;
+          }
+        }
+      }
+      &-content{
+        background-color: #ffb33b;
+        padding: 20px 15px;
+      }
+      &-list{
+        ul{
+          @include nl;
+          line-height: 18px;
+          li{
+            display: block;
+            &.active{
+              >a{
+                em{
+                  transform: rotate(180deg);
+                }
+              }
+            }
+            a{
+              display: block;
+              color: #fff;
+            }
+          }
+        }
+        >ul{
+          >li{
+            +*{
+              border-top: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            >a{
+              padding: 16px 0;
+              padding-right: 15px;
+              position: relative;
+              em{
+                position: absolute;
+                right: 10px;
+                @include triangle('down', currentColor, 6px, 6px);
+                top: 50%;
+                margin-top: -3px;
+                @include tr;
+              }
+            }
+            ul{
+              padding: 9px 20px;
+              display: none;
+              background-color: #fff;
+              border-left: 1px solid rgba(255, 255, 255, 0.2);
+              li{
+                a{
+                  color: #000;
+                  font-size: 15px;
+                  padding: 6px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 
   &-desktop{
     .mobile-list-anim {
@@ -15,6 +146,7 @@
           & ~ .menuTopMobel {
             z-index: 10;
             color: #4e4e4e;
+
           }
         }
       }

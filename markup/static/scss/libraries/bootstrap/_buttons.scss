@@ -42,6 +42,10 @@
     margin-right: 15px;
   }
 
+  &-borderBig{
+    border-width: 2px;
+  }
+
   &,
   &:active,
   &.active {
@@ -100,6 +104,10 @@ a.btn {
   @include button-variant(#212121, #fff);
 }
 
+.btn-black{
+  @include button-variant(#fff, #000);
+}
+
 // Link buttons
 // -------------------------
 
@@ -156,6 +164,12 @@ a.btn {
   font-size: 16px;
   font-weight: 700;
   padding: 24px 60px;
+  max-width: 100%;
+}
+.btn-input {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10.5px 32px;
   max-width: 100%;
 }
 //.btn-sm {

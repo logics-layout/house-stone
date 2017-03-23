@@ -2,6 +2,54 @@ mixin footer(data)
     footer.footer.not-styleLink
         .container
 
+            .footer__navBlock
+                .footer__navList
+                    p.footer__navList-title Гранит
+                    hr.hidden-sm-down
+                    ul.footer__navList-list
+                        li: a(href="#"): span Слэбы и полуслэбы
+                        li: a(href="#"): span Изделия из гранита
+                .footer__navList
+                    p.footer__navList-title Мрамор
+                    hr.hidden-sm-down
+                    ul.footer__navList-list
+                        li: a(href="#"): span Слэбы и полуслэбы
+                        li: a(href="#"): span Изделия из мрамора
+                .footer__navList
+                    p.footer__navList-title Компания
+                    hr.hidden-sm-down
+                    .footer__navList-listBlock
+                        .footer__navList-listBlock-section
+                            ul.footer__navList-list
+                                li: a(href="#"): span О компании
+                                li: a(href="#"): span Доставка
+                        .footer__navList-listBlock-section
+                            ul.footer__navList-list
+                                li: a(href="#"): span Оплата
+                                li: a(href="#"): span Упаковка
+                        .footer__navList-listBlock-section
+                            ul.footer__navList-list
+                                li: a(href="#"): span Цены
+                                li: a(href="#"): span Контакты
+
+            br
+            .footer__bottomBg
+                .footer__bottomMainBLock
+                    .footer__bottom
+                        .footer__bottom-cell.hidden-md-down
+                            span © 2012-2017, Все права защищены. Официальный сайт компании «Дом камня»
+                        .footer__bottom-cell
+                            a(href="#").footer__ins
+                                i.s-ins.hidden-sm-down
+                                span Мы в Instagram
+                        .footer__bottom-cell
+                            a(href='tel:8-800-555-47-57').footer__phone: span 8-800-555-47-57
+                        .footer__bottom-cell
+                            br.hidden-md-up
+                            button.btn.btn-orange.btn_footer Напишите нам
+                .hidden-lg-up
+                    br
+                    span.db.text-center © 2012-2017, Все права защищены. Официальный сайт компании «Дом камня»
 
 
 

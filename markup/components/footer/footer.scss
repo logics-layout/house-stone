@@ -1,3 +1,107 @@
 .footer{
+  background-size: cover;
+  background-position: center;
+  background-image: url('%=static=%assets/footer/bg.jpg');
+  padding: 65px 0;
+  font-size: 14px;
+  line-height: 30px;
+  color: #fff;
 
+  &__navBlock{
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+    hr{
+      border-color: #fff;
+      margin: 30px 0;
+    }
+    >*{
+      display: table-cell;
+      vertical-align: top;
+    }
+  }
+  &__ins{
+    color: #fff;
+    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 300;
+    i{
+      margin-top: -4px;
+    }
+    span{
+      //white-space: normal;
+      margin-left: 17px;
+      @include link-border-color(#fff);
+    }
+    &:hover{
+      span{
+        border-bottom-color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+  &__phone{
+    font-size: 16px;
+    font-weight: 300;
+    color: inherit;
+    white-space: nowrap;
+    span{
+      border-bottom: 1px solid transparent;
+    }
+    &:hover{
+      span{
+        border-bottom-color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+  &__bottomMainBLock{
+    margin: 0 -20px;
+  }
+  &__bottom{
+    display: table;
+    width: 100%;
+    >*{
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 20px;
+    }
+  }
+  &__navList{
+    &-title{
+      color: #ffb33b;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: normal;
+    }
+    &-list{
+      @include nl;
+      display: inline-block;
+      li{
+        display: block;
+        a{
+          color: white;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: normal;
+          display: block;
+          padding: 15px 0;
+          span{
+            border-bottom: 1px solid transparent;
+          }
+          &:hover{
+            span{
+              border-bottom-color: rgba(255, 255, 255, 0.5);
+            }
+          }
+        }
+      }
+    }
+    &-listBlock{
+      font-size: 0;
+      &-section{
+        display: inline-block;
+        width: 33.33%;
+      }
+    }
+  }
 }
