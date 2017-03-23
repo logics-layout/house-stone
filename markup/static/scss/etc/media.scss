@@ -68,6 +68,23 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  h1, .h1 {
+    font-size: 43px;
+    line-height: 50px;
+  }
+  .products{
+    &__sections{
+      &-section{
+        width: 33.33%;
+      }
+    }
+    &__item {
+      &-list {
+        padding: 10px 0;
+      }
+    }
+  }
+
 
   .contacts{
     &__sections{
@@ -346,6 +363,13 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .products{
+    &__sections{
+      &-section{
+        width: 50%;
+      }
+    }
+  }
   .staff {
     &__setions {
       &-section {
@@ -368,8 +392,8 @@ body, html{
   }
 
   h1, .h1 {
-    font-size: 43px;
-    line-height: 50px;
+    font-size: 38px;
+    line-height: 45px;
   }
   html, body {
     font-size: 14px;
@@ -458,6 +482,13 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .products{
+    &__sections{
+      &-section{
+        width: 100%;
+      }
+    }
+  }
   .staff {
     &__setions {
       &-section {
@@ -506,8 +537,8 @@ body, html{
     font-size: 22px;
   }
   h1, .h1 {
-    font-size: 38px;
-    line-height: 47px;
+    font-size: 30px;
+    line-height: 37px;
   }
 
   .itemList{

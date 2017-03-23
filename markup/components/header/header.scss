@@ -4,6 +4,7 @@
   background-image: url('%=static=%assets/header/bg_inner.jpg');
   position: relative;
   color: #fff;
+  z-index: 8;
 
   &-mobile{
     .mobile-list-anim {
@@ -29,10 +30,10 @@
       width: 100%;
       border-bottom: 1px solid;
       position: relative;
-      z-index: 1;
       background-size: cover;
       background-position: center;
       background-image: url('%=static=%assets/header/bg_inner.jpg');
+      z-index: 2;
       &-cell{
         display: table-cell;
         vertical-align: middle;
@@ -70,6 +71,7 @@
       overflow: auto;
       padding-top: 55px;
       display: none;
+      z-index: 1;
       .form-search{
         display: block;
         width: 100%;

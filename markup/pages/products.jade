@@ -1,0 +1,124 @@
+extends main
+
+include ../components/item/item
+
+block head
+    - var headData = {title: "Каталог"}
+
+block content
+    .container
+        h1 Изделия из гранита и мрамора
+        p Собственная производственная база, опытный персонал (более 60 человек) и многолетний стаж работы позволяют нам изготавливать изделия любой сложности с ювелирной точностью
+
+        hr
+        .products__sections.not-styleLink
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Облицовочные плиты
+                    ul.products__item-list
+                        li: a(href="#"): span Плитка из гранита
+                        li: a(href="#"): span Плитка из мрамора
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Полосы
+                    ul.products__item-list
+                        li: a(href="#"): span Плитка из гранита
+                        li: a(href="#"): span Плитка из мрамора
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Слэбы
+                    ul.products__item-list
+                        li: a(href="#"): span Плитка из гранита
+                        li: a(href="#"): span Плитка из мрамора
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Полы
+                    ul.products__item-list
+                        li: a(href="#"): span Плитка из гранита
+                        li: a(href="#"): span Плитка из мрамора
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Материалы для
+                            br
+                            span.products__item-label дорожного
+                            br
+                            span.products__item-label благоустройства
+                    ul.products__item-list
+                        li: a(href="#"): span Плитка из гранита
+                        li: a(href="#"): span Плитка из мрамора
+            .products__sections-section
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Входные группы
+                    ul.products__item-list
+                        li: a(href="#"): span  Ступени
+                        li: a(href="#"): span  Плиты
+                        li: a(href="#"): span  Балюстрада
+                        li: a(href="#"): span  Балясины и столбы
+                        li: a(href="#"): span  Перила
+                        li: a(href="#"): span  Основания и подбалясники
+            -for(var i = 0;i<5;i++)
+                .products__sections-section
+                    .products__item
+                        .products__item-img
+                            .products__item-img-content
+                                span.products__item-label Материалы
+                        ul.products__item-list
+                            li: a(href="#"): span Плитка из гранита
+                            li: a(href="#"): span Плитка из мрамора
+
+        hr
+        h2 Купить качественный гранит у производителя
+        p Наши специалисты помогут правильно подобрать цвет, рассчитают стоимость заявки, доставят готовые обработанные изделия и сразу установят. Компания осуществляет практически полный цикл работы – клиенту остается лишь сделать заявку и в короткие сроки принять готовое изделие. Плитка, элементы входной группы, брусчатка, бордюр, подоконники, столешницы и другие изделия из гранита можно заказать у нас. Для этого позвоните по тел. 8-800-555-47-57, либо заполните форму для обратной связи и мы свяжемся с вами.
+
+    //hr.two
+
+
+block script
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
