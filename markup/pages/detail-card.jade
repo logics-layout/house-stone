@@ -1,0 +1,163 @@
+extends main
+
+include ../components/item/item
+include ../components/item-table/item-table
+
+block head
+    - var headData = {title: "Каталог"}
+
+block content
+    .container
+        h1 Абсолют Блэк (Absolute Black)
+        br
+        .card
+            .card__slider
+                .card__slider-img
+                    +img('content/card')
+
+                .hidden-sm-down
+                    span.card__titleSub Аналоги
+                    .item-sliderBlock.arrow-two
+                        .item-slider
+                            -for(var i = 0; i<6;i++)
+                                .item-slider__section
+                                    +item()
+
+            .card__desc
+                br
+                b Описание:
+                p Абсолют Блэк имеет глубокий черный цвет без каких-либо светлых вкраплений. Структура мелкозернистая. Гранит Absolute Black обладает высокой степенью прочности и стойкостью к истиранию. Широко применяется для различных видов отделки – от наружной облицовки стен, до создания каких-либо декоративных элементов.
+                hr.card__hr
+                .card__sections
+                    .card__sections-section
+                        b Цвет:
+                        br
+                        a(href='#').color-view.not-styleLink
+                            span.color-view__el
+                            span.color-view__title Черный
+                    .card__sections-section
+                        b Страна:
+                        br
+                        a(href='#').color-view.not-styleLink
+                            i.s-country
+                            span.color-view__title Индия
+
+                hr.card__hr
+                p: b Характеристики:
+
+                ul.list-features(style="max-width: 463px;")
+                    li
+                        span Объёмный вес, кг/м3
+                        span 2895
+                    li
+                        span Удельная плотность, г/см3
+                        span 2,59
+                    li
+                        span Водопоглощение, %
+                        span 0,18
+                    li
+                        span Пористость, %
+                        span 0,34
+                    li
+                        span Истираемость, г/см2
+                        span 0,2
+                    li
+                        span Морозостойкость, циклов
+                        span 50
+                    li
+                        span Предел прочности при сжатии, кг/см2 (МПа)
+                        span 200
+
+        hr
+        .filter__table
+            .filter__table-cell
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title.filter__sections-title_big Цены на гранит:
+                    .filter__sections-section
+                        ul.tabs__nav.not-styleLink
+                            li.active: a(href="#", data-block="#items11"): span: b Плиты
+                            li: a(href="#", data-block="#items22"): span: b Полосы
+                            li: a(href="#", data-block="#items223"): span: b Слэбы
+        br
+        .tabs__content
+            .tabs__content-item.active#items11
+                +item-table()
+            .tabs__content-item#items22
+                +item-table()
+            .tabs__content-item#items223
+                +item-table()
+        br
+        h2 Применение гранита Абсолют Блэк
+        p Гранит Капустинского месторождения применяется в строительстве для облицовки зданий и метро. Плитка используется для отделки элементов зданий и сооружений, при ландшафтном дизайне парков, площадей, улиц, скверов и т.п. И, вообще там, где требуется высокая архитектурная выразительность. Rosso Santiago пригоден для изготовления постаментов, особенно в полированном виде. Также он применяется в коттеджном (частном) строительстве. Постоянно увеличивается число частных домов, облицованных этим гранитом.
+        hr
+        h2 Объекты из гранита Абсолют Блэк
+        br
+        .slider-inner.arrow-beyond
+            -for(var i = 0; i<2;i++)
+                .slider-inner__section: +img('content/slider-inner/1')
+                .slider-inner__section: +img('content/slider-inner/2')
+                .slider-inner__section: +img('content/slider-inner/3')
+
+
+        hr
+        h2 Области применения гранита Абсолют Блэк
+        .products__sections.not-styleLink
+            .products__sections-section.products__sections-section_col3
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Плита
+                    .products__item-content
+                        p Плитка из Капустинского гранита (Rosso Santiago) изготавливается как стандартных размеров 300х300х20; 300х300х30; 400х300х20; 600х300х20; 600х400х20; 600х600х20; мм, так по индивидуальным параметрам. В зависимости от технологии обработки поверхность гранитной плитки может быть гладкой, шероховатой или с зеркальным блеском.
+            .products__sections-section.products__sections-section_col3
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Изделия
+                    .products__item-content
+                        p Капустинский гранит (Rosso Santiago) служит материалом для толстомерных плит толщиной 40, 50 и 60 мм. Эти изделия чаще всего находят своё применение в мощении придомовых территорий, улиц, мостовых, площадок. Намного реже их используют при внутренней отделке.
+            .products__sections-section.products__sections-section_col3
+                .products__item
+                    .products__item-img
+                        .products__item-img-content
+                            span.products__item-label Толстомерные изделия
+                    .products__item-content
+                        p Изделия из Капустинского гранита (Rosso Santiago) очень прочны и долговечны. Функциональность и практичность в сочетании с презентабельностью и элегантностью делают эти изделия из природного камня прекрасным украшением любого интерьера или здания. На выбор различные цвета, фактуры, размеры и формы. Капустинский гранит (Rosso Santiago) применяют для изготовления столешниц, подоконников, ступеней на любой вкус.
+block script
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

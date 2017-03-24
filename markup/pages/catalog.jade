@@ -1,6 +1,7 @@
 extends main
 
 include ../components/item/item
+include ../components/item-table/item-table
 
 block head
     - var headData = {title: "Каталог"}
@@ -73,45 +74,8 @@ block content
     hr.two
     .container
         h2 Цены на гранит
-        .item-table
-            .table-inner
-                .table-inner__thead.hidden-md-down
-                    .table-inner__tr.table-inner__tr_thead
-                        .table-inner__td.table-inner__td_notPadding
-                        .table-inner__td.text-center: +icon('photo')
-                        .table-inner__td Наименование
-                        .table-inner__td Описание
-                        .table-inner__td.item-table__nowrap Ед. измер.
-                        .table-inner__td Наличие
-                        .table-inner__td Цена
-                        .table-inner__td
-                        .table-inner__td.table-inner__td_notPadding
-                .table-inner__tbody
-                    -for(var i = 0; i<5;i++)
-                        a(href='#').table-inner__tr
-                            .table-inner__td.table-inner__td_notPadding
-                            span.table-inner__td.table-inner__td_img
-                                span.db.img-texture
-                                    span.db.img-texture__bg
-                                    +img('content/item', 'png')
-                            span.table-inner__td
-                                span.item-table__title Баттерфляй Грин (Butterfly Green) черного цвета
-                            span.table-inner__td
-                                span.hidden-lg-up: b Описание:&nbsp;
-                                span Черного цвета размерами 300х300(600)x18(20), полировка
-                            span.table-inner__td.text-center.item-table__nowrap
-                                span.hidden-lg-up: b Ед. измер.:&nbsp;
-                                span кв.м
-                            span.table-inner__td.item-table__nowrap.text-center
-                                span.hidden-lg-up: b Наличие:&nbsp;
-                                span есть
-                            span.table-inner__td.item-table__nowrap.text-center
-                                span.hidden-lg-up: b Цена:&nbsp;
-                                span: b 3 337 р.
-                            span.table-inner__td
-                                br.hidden-sm-up
-                                button.btn.btn-orange.btn-border.btn-input Заказать
-                            .table-inner__td.table-inner__td_notPadding
+        +item-table()
+
 
 
     hr.two

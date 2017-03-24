@@ -70,14 +70,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 22px;
-    height: 100%;
+    padding: 10px 15px;
+
     z-index: 9;
-    fill: #b4b4b4;
-    padding-right: 42px;
-    &:hover{
-      fill: #000;
-    }
+    fill: #fff;
+    //padding-right: 42px;
+
     i{
       svg{
         display: block;
@@ -85,6 +83,7 @@
     }
   }
 }
+
 
 // Actual modal
 .modal-content {
@@ -94,7 +93,7 @@
   //border: 1px solid $modal-content-border-color;
   //border-radius: $border-radius-large;
   //@include box-shadow(0 3px 9px rgba(0,0,0,.5));
-  box-shadow: 0 35px 40px rgba(0, 92, 86, 0.15);
+  //box-shadow: 0 35px 40px rgba(0, 92, 86, 0.15);
   background-clip: padding-box;
   // Remove focus outline from opened modal
   outline: 0;
@@ -108,7 +107,7 @@
   bottom: 0;
   left: 0;
   z-index: $zindex-modal-background;
-  background-color: #000;
+  background-color: #212121;
   //background-color: $modal-backdrop-bg;
   // Fade for backdrop
   &.fade { @include opacity(0); }
@@ -122,17 +121,9 @@
   padding: 30.5px 0;
   //border-bottom: 1px solid $modal-header-border-color;
   //background-color: #e6e6e6;
-  background-image: url('%=static=%assets/header/bg_bottom.jpg');
-  background-size: cover;
-  background-position: center;
+  //background-image: url('%=static=%assets/header/bg_bottom.jpg');
+  background-color: #ffb33b;
   position: relative;
-  &__title{
-    color: #fff;
-    font-size: 30px;
-    font-weight: 400;
-    line-height: 34px;
-    margin: 0;
-  }
   //@include clearfix;
 }
 // Close icon
@@ -147,18 +138,15 @@
   //text-align: center;
   font-size: 26px;
   line-height: 28px;
-  font-weight: 600;
-  color: #010302;
-  font-family: Neris, sans-serif;
+  color: #010101;
+  font-weight: 500;
+  //margin-bottom: 0;
 
-  margin-bottom: 17px;
-  &.small{
-    font-size: 20px;
-    line-height: 30px;
-  }
-  &-sub{
-    font-weight: 300;
-    text-align: center;
+  &Sub{
+    color: #010101;
+    font-size: 16px;
+    //font-weight: 300;
+    //text-align: center;
   }
 }
 
@@ -201,8 +189,8 @@
 }
 
 .modal-padding {
-  padding-left: 54px;
-  padding-right: 54px;
+  padding-left: 23px;
+  padding-right: 23px;
 }
 
 // Scale up the modal
@@ -212,16 +200,26 @@
     width: $modal-md;
     margin: 30px auto;
   }
-  .modal-content {
-    box-shadow: 0 35px 40px rgba(0, 92, 86, 0.15);
-  }
   .modal-title {
-    font-size: 32px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 40px;
+    &Sub{
+      font-size: 16px;
+    }
   }
 
+  .modal-dialog {
+    .close {
+      left: 100%;
+      padding-left: 31px;
+      height: 100%;
+      &:hover{
+        fill: $mainColor;
+      }
+    }
+  }
   .modal-body {
-    padding: 39px 60px;
+    padding: 55px 60px;
   }
 
   .well-title{

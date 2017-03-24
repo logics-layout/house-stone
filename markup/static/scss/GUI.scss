@@ -561,6 +561,12 @@ table{
       font-size: 18px;
       font-weight: 300;
       line-height: 26px;
+      &_big{
+        color: #1a1b1b;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: normal;
+      }
     }
     &-section{
 
@@ -700,6 +706,16 @@ table{
   }
 }
 
+.arrow-two{
+  .slick-arrow{
+    background-color: transparent;
+    fill: #949494;
+    &:hover{
+      background-color: transparent;
+      fill: #3d3d3d;
+    }
+  }
+}
 .arrow-beyond{
   .slick-arrow{
     position: absolute;
@@ -716,4 +732,53 @@ table{
     }
   }
 }
+.color-view{
+  display: inline-block;
+  color: #1a1b1b;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 26px;
+  >*{
+    +*{
+      margin-left: 9px;
+    }
+  }
+  &__el{
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background-color: #3e3e3e;
+  }
+  &__title{
+    border-bottom: 1px solid rgba(26, 27, 27, 0.3);
+  }
+  &:hover{
+    .color-view__title{
+      border-bottom-color: rgba(26, 27, 27, 0.6);
+    }
+  }
+}
 
+.list-features{
+  display: table;
+  color: #1a1b1b;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 25px;
+  >*{
+    display: table-row;
+    >*{
+      display: table-cell;
+      vertical-align: middle;
+      padding: 12px 9px;
+    }
+    &:nth-of-type(2n-1){
+      background-color: #f6f6f6;
+      >*{
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+}

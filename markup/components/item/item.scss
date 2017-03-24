@@ -60,10 +60,18 @@
       }
     }
   }
-  &__title{}
+  &__title{
+    border-bottom: 1px solid transparent;
+  }
   &__titleSub{
+    border-bottom: 1px solid transparent;
     color: #616161;
     font-size: 15px;
+  }
+  &:hover{
+    .item__title, .item__titleSub{
+      border-bottom-color: rgba(0, 0, 0, 0.22);
+    }
   }
 }
 
@@ -78,10 +86,10 @@
     width: 16.66%;
     border: 1px solid transparent;
     &:hover{
-      box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.08);
-      -webkit-transform: translateY(-4px);
-      transform: translateY(-4px);
-      border-color: #eee;
+      //box-shadow: -1px 4px 4px rgba(0, 0, 0, 0.08);
+      //-webkit-transform: translateY(-4px);
+      //transform: translateY(-4px);
+      //border-color: #eee;
     }
   }
 }

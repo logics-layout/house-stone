@@ -1,84 +1,109 @@
 extends main
 
 include ../components/item/item
+include ../components/item-table/item-table
 
 block head
     - var headData = {title: "Каталог"}
 
 block content
     .container
-        h1 Изделия из гранита и мрамора
-        p Собственная производственная база, опытный персонал (более 60 человек) и многолетний стаж работы позволяют нам изготавливать изделия любой сложности с ювелирной точностью
+        h1 Облицовочные плиты
+        .row
+            .col-lg-8.col-md-6
+                br.hidden-md-down
+                p Модульная плита  – один из вариантов облицовочной плиты определенной толщины со стандартными размерами. Она относится к числу самых распространенных отделочных материалов и используется как для внешней отделки фасадов строений, так для внутренних ремонтных работ. Благодаря обширной цветовой гамме мрамора и гранита, имеющейся в наличии на складе у нас, а также их особой структуре появляется реальная возможность осуществления самых разнообразных и неожиданных дизайнерских проектов.
+            .col-lg-4.col-md-6
+                +img('content/inner')
 
         hr
-        .products__sections.not-styleLink
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Облицовочные плиты
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Полосы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Слэбы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Полы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Материалы для
-                            br
-                            span.products__item-label дорожного
-                            br
-                            span.products__item-label благоустройства
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Входные группы
-                    ul.products__item-list
-                        li: a(href="#"): span  Ступени
-                        li: a(href="#"): span  Плиты
-                        li: a(href="#"): span  Балюстрада
-                        li: a(href="#"): span  Балясины и столбы
-                        li: a(href="#"): span  Перила
-                        li: a(href="#"): span  Основания и подбалясники
-            -for(var i = 0;i<5;i++)
-                .products__sections-section
-                    .products__item
-                        .products__item-img
-                            .products__item-img-content
-                                span.products__item-label Материалы
-                        ul.products__item-list
-                            li: a(href="#"): span Плитка из гранита
-                            li: a(href="#"): span Плитка из мрамора
+        .filter__table
+            .filter__table-cell
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title Выберите вид камня:
+                    .filter__sections-section
+                        ul.tabs__nav.not-styleLink
+                            li.active: a(href="#", data-block="#items11"): span: b Гранит
+                            li: a(href="#", data-block="#items22"): span: b Мрамор
+                            li: a(href="#", data-block="#items223"): span: b Оникс
+        br
+        .tabs__content
+            .tabs__content-item.active#items11
+                .itemList
+                    -for(var i = 0; i<12;i++)
+                        .itemList__section
+                            +item()
+            .tabs__content-item#items22
+                .itemList
+                    -for(var i = 0; i<12;i++)
+                        .itemList__section
+                            +item()
+            .tabs__content-item#items223
+                .itemList
+                    .itemList__section
+                        +item()
+        hr
+        h2 Готовые объекты из гранитных и мраморных плит
+        br
+        .slider-inner.arrow-beyond
+            -for(var i = 0; i<2;i++)
+                .slider-inner__section: +img('content/slider-inner/1')
+                .slider-inner__section: +img('content/slider-inner/2')
+                .slider-inner__section: +img('content/slider-inner/3')
+
 
         hr
+        h2 Преимущества нашей компании
+        br
+        .advantages
+            .advantages__list
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-1')
+                    .advantages__item-desc Большой опыт работы — с 1997 года
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-2')
+                    .advantages__item-desc Бесплатные размеры и расчёты
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-3')
+                    .advantages__item-desc Минимальные сроки
+                        |изготовления заказов
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-4')
+                    .advantages__item-desc Индивидуальный подход
+                        |к каждому клиенту
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-5')
+                    .advantages__item-desc Собственное производство
+                        |с новейшим оборудованием
+                        |ведущих производителей
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-6')
+                    .advantages__item-desc Широкий ассортимент гранита
+                        |и мрамора, работа с любым
+                        |заказом
+                .advantages__item
+                    .advantages__item-icon: +icon('advantages-7')
+                    .advantages__item-desc Наличие собственно автопарка
+        hr
+        p.h2 Смотрите видео нашего производства:
+        .video-list.not-styleLink
+            .video-list__preview
+                a(href="#", data-video="https://www.youtube.com/embed/MlwxGITcioM?rel=0", data-text="Процесс производства").video-list__preview-item.active: +img('content/video-list/1')
+                a(href="#", data-video="https://www.youtube.com/embed/Xjg4W83fuI8?rel=0", data-text="Процесс производства1").video-list__preview-item: +img('content/video-list/2')
+                a(href="#", data-video="https://www.youtube.com/embed/BDbkf239NtY?rel=0", data-text="Процесс производства2").video-list__preview-item: +img('content/video-list/3')
+                a(href="#", data-video="https://www.youtube.com/embed/g4zEV6NxiRM?rel=0", data-text="Процесс производства3").video-list__preview-item: +img('content/video-list/4')
+            .video-list__video
+                .video-list__video-el
+                    iframe(src="https://www.youtube.com/embed/MlwxGITcioM" frameborder="0" allowfullscreen)
+                    .video-list__video-content
+                        span Процесс производства
+
+
+        hr
+        h2 Цены на плиты гранитные и мраморные
+        +item-table()
+        br
         h2 Купить качественный гранит у производителя
         p Наши специалисты помогут правильно подобрать цвет, рассчитают стоимость заявки, доставят готовые обработанные изделия и сразу установят. Компания осуществляет практически полный цикл работы – клиенту остается лишь сделать заявку и в короткие сроки принять готовое изделие. Плитка, элементы входной группы, брусчатка, бордюр, подоконники, столешницы и другие изделия из гранита можно заказать у нас. Для этого позвоните по тел. 8-800-555-47-57, либо заполните форму для обратной связи и мы свяжемся с вами.
 

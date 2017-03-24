@@ -68,6 +68,31 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .card {
+    &__slider {
+      padding-right: 30px;
+    }
+  }
+  .video-list {
+    &__preview {
+      float: none;
+      font-size: 0;
+      &-item{
+        width: 25%;
+        display: inline-block;
+      }
+    }
+    &__video {
+      margin-left: 0;
+      margin-top: 7.5px;
+    }
+  }
+  .advantages {
+    &__item {
+      width: 33.33%;
+    }
+  }
+
   h1, .h1 {
     font-size: 43px;
     line-height: 50px;
@@ -202,10 +227,31 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, md)) {
-
+  .filter{
+    &__sections{
+      &-title{
+        &_big{
+          color: #1a1b1b;
+          font-size: 30px;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+    }
+  }
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
+  .products{
+    &__sections{
+      &-section{
+        &_col3{
+          width: 33.33%;
+        }
+      }
+    }
+  }
+
   .table-inner{
     display: table;
     width: 100%;
@@ -223,11 +269,8 @@ body, html{
         &:last-child{
           >*{
             border-bottom: 1px solid #dadada;
-            &:first-child{
-              border-bottom: 1px solid #dadada;
-            }
-            &:last-child{
-              border-bottom: 1px solid #dadada;
+            &:first-child, &:last-child{
+              border-bottom: 1px solid #dadada !important;
             }
           }
         }
@@ -254,6 +297,9 @@ body, html{
           z-index: 1;
           >*{
             border-color: transparent !important;
+            &:last-child, &:first-child{
+              border-bottom-color: transparent !important;
+            }
           }
           .item-table__title{
             color: #00a8ec;
@@ -363,6 +409,33 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .card {
+    > * {
+      display: inline-block;
+    }
+    &__slider {
+      display: block;
+      padding-right: 0;
+      width: 300px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    &__desc {
+      width: 100%;
+    }
+  }
+  .advantages {
+    &__list{
+      margin: -15px;
+      text-align: center;
+    }
+    &__item {
+      padding: 15px;
+      font-size: 14px;
+      line-height: 22px;
+      width: 50%;
+    }
+  }
   .products{
     &__sections{
       &-section{
@@ -482,6 +555,18 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .video-list {
+    &__preview {
+      &-item{
+        width: 50%;
+      }
+    }
+    &__video-el{
+      iframe{
+        height: 300px;
+      }
+    }
+  }
   .products{
     &__sections{
       &-section{
