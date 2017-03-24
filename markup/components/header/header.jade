@@ -286,8 +286,77 @@ mixin header(data)
                             .header__sections-section
                                 button.btn.btn-orange(data-toggle="modal" data-target="#callback") Заказать звонок
 
+        -if(data)
+            .header-bottom
+                .container
+                    .text-center
+
+                        .hidden-lg-up
+                            +img('assets/header/logo_min', 'png')
+                            br
+                            br
+
+                        .header-bottom__title.hidden-xs-down Производство изделий
+                            br
+                            |из гранита и мрамора
+
+                        .header-bottom__title.hidden-sm-up Производство
+                            br
+                            | изделий из гранита
+                            br
+                            |и мрамора
+
+                        .header-bottom__titleSub.hidden-sm-down Мы будем рады видеть Вас в числе наших
+                            br
+                            |счастливых клиентов
+
+                        .hidden-sm-down
+                            button.btn.btn-orange Перейти в каталог камня
+                            br
+                            br
+                            br
+
+                        .statistics.arrow-center.arrow-two
+                            .statistics__section
+                                .statistics__item
+                                    .statistics__item-num 5+
+                                    .statistics__item-desc стран-поставщиков
+                                        br.hidden-md-down
+                                        |&nbsp;Россия, Украина, Китай, Индия, Турция
+
+                            .statistics__section
+                                .statistics__item
+                                    .statistics__item-num 20
+                                    .statistics__item-desc лет профессиональной работы
+                                        br.hidden-md-down
+                                        |&nbsp;Собственное производство и галерея
+                                        br.hidden-md-down
+                                        |&nbsp;натурального камня
+
+                            .statistics__section
+                                .statistics__item
+                                    .statistics__item-num 60+
+                                    .statistics__item-desc объектов монументальной
+                                        br.hidden-md-down
+                                        |&nbsp;скульптуры и памятников архитектуры
+
+                        .hidden-md-up
+                            br
+                            a(href="tel:88005554757").header-bottom__phone
+                                i.s-phone-or
+                                | 8-800-555-47-57
+                            button.btn.btn-orange Перейти в каталог камня
+
+                        .hidden-lg-up
+                            br.hidden-xs-down
+                            br
 
 
+            .hidden-md-down
+                br
+                br
+                .text-center
+                    i.s-mouse
 
 
 

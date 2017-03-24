@@ -1,11 +1,359 @@
 extends main
 
+include ../components/item/item
+
 block head
     - var headData = {title: "Главная"}
     - var breadcrumb = true
     - var index = 'header_index'
 
 block content
+    .container
+        .index-block-title.text-center
+            h1.index-block-title__title Акции
+            p.index-block-title__desc Самые выгодные предложения и акции на гранит, мрамор и изделия из природного камня
+
+
+    .stock.arrow-center
+        -for(var i=0;i<2;i++)
+            .stock__item(style="background-image: url('%=static=%img/content/stock/2.jpg');")
+                .stock__item-content.stock__item-padding
+                    .stock__item-table
+                        .stock__item-table-cell
+                            span.stock__item-title Жгучее
+                                br
+                                | предложение
+                        .stock__item-table-cell
+                            i.s-heat
+                    br
+                    .stock__item-text гранитные плиты
+                        br
+                        |с термообработанной поверхностью
+                    .stock__item-price от 1392 р/м2
+                .stock__item-bottom.stock__item-padding
+                    button.btn.btn-white.btn-border Узнать подробности
+            .stock__item(style="background-image: url('%=static=%img/content/stock/1.jpg');")
+                .stock__item-content.stock__item-padding
+                    .stock__item-title Новое поступление слэбов из Индии
+                .stock__item-bottom.stock__item-padding
+                    button.btn.btn-white.btn-border Узнать подробности
+            .stock__item(style="background-image: url('%=static=%img/content/stock/3.jpg');")
+                .stock__item-content.stock__item-padding
+                    .stock__item-table
+                        .stock__item-table-cell
+                            span.stock__item-title Бесплатные
+                                br
+                                |замеры
+                        .stock__item-table-cell
+                            +icon('roulette')
+                    br
+                    .stock__item-text В черте города
+
+                .stock__item-bottom.stock__item-padding
+                    button.btn.btn-white.btn-border Узнать подробности
+    br
+    br
+    .text-center
+        button.btn.btn-orange Смотреть все акции
+    br
+    hr.two
+    .container
+        .index-block-title.text-center
+            h1.index-block-title__title Каталог камня
+            p.index-block-title__desc В наличии большой выбор натурального камня в слэбах и плитах любого размера.
+        hr
+        .filter__table
+            .filter__table-cell.hidden-md-down
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title Выберите вид камня:
+                    .filter__sections-section
+                        ul.tabs__nav.not-styleLink
+                            li.active: a(href="#", data-block="#items11"): span: b Гранит
+                            li: a(href="#", data-block="#items22"): span: b Мрамор
+            .filter__table-cell.filter__table-cell__select.hidden-lg-up
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title Вид камня:
+                    .filter__sections-section
+                        select
+                            option Гранит
+                            option item 1
+                            option item 2
+                            option item 3
+            .filter__table-cell.filter__table-cell__select
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title Цвет:
+                    .filter__sections-section
+                        select
+                            option Бежевый
+                            option item 1
+                            option item 2
+                            option item 3
+            .filter__table-cell.filter__table-cell__select
+                .filter__sections
+                    .filter__sections-section
+                        span.filter__sections-title Страна:
+                    .filter__sections-section
+                        select
+                            option Не выбрана
+                            option Все страны
+                            option Российский
+                            option Бразильский
+                            option Индийский
+                            option Казахстанские
+                            option Китайские
+                            option Норвежские
+                            option Украинские
+            .filter__table-cell.filter__table-cell__select.hidden-md-down
+                .hidden-xs-down
+                    .hidden-lg-up
+                        span.filter__sections-title &nbsp;
+
+                .form-search.form-search_hidden
+                    button.form-search__btn: +icon('search')
+                    .form-search__inputs
+                        input(placeholder="Поиск по каталогу").form-search__inputs-input
+
+        br
+        br
+        .hidden-md-up
+            .item-listSlider.arrow-beyond
+                div
+                    -for(var i = 0; i<6;i++)
+                        .item-listSlider-section
+                            +item()
+
+            .text-center
+                p(style="color: #616161;margin-bottom: 8px;margin-top: 18px;") и еще более 40 наименований гранита
+                button.btn.btn-orange.btn-width Смотреть весь гранит
+
+        .tabs__content.hidden-sm-down
+            .tabs__content-item.active#items11
+                .itemList
+                    -for(var i = 0; i<36;i++)
+                        .itemList__section
+                            +item()
+            .tabs__content-item#items22
+                .itemList
+                    -for(var i = 0; i<36;i++)
+                        .itemList__section
+                            +item()
+
+        hr
+
+        .index-block-title.index-block-title_big.text-center
+            h1.index-block-title__title Изделия из натурального гранита и мрамора
+            p.index-block-title__desc Собственная производственная база, опытный персонал (более 60 человек) и многолетний стаж работы позволяют нам изготавливать изделия любой сложности с ювелирной точностью
+
+
+    .index-products-slider.arrow-center.hidden-lg-up.not-styleLink
+        -for(var i = 0; i<5;i++)
+            a(href="#").index-products-slider__section
+                span.db.products__item-img.products__item-img_index
+                    span.db.products__item-img-content
+                        span.products__item-label Облицовочные плиты
+
+    .index-products.hidden-md-down.not-styleLink
+        -for(var i = 0; i<3;i++)
+            .index-products__section
+                .products__item-img.products__item-img_index.products__item-img_hover
+                    .products__item-img-contentHover
+                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
+                        br
+                        ul.products__item-img-contentHover-list
+                            li: a(href="#"): span Брекчия
+                            li: a(href="#"): span Брусчатка
+                            li: a(href="#"): span Толстомерные плиты мощения
+
+                    .products__item-img-content
+                        span.products__item-label Облицовочные плиты
+            .index-products__section
+                .products__item-img.products__item-img_index.products__item-img_hover
+                    .products__item-img-contentHover
+                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
+                        br
+                        ul.products__item-img-contentHover-list
+                            li: a(href="#"): span Брекчия
+                            li: a(href="#"): span Брусчатка
+                            li: a(href="#"): span Толстомерные плиты мощения
+
+                    .products__item-img-content
+                        span.products__item-label Облицовочные плиты
+            .index-products__section
+                .products__item-img.products__item-img_index.products__item-img_hover
+                    .products__item-img-contentHover
+                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
+                        br
+                        ul.products__item-img-contentHover-list
+                            li: a(href="#"): span Брекчия
+                            li: a(href="#"): span Брусчатка
+                            li: a(href="#"): span Толстомерные плиты мощения
+
+                    .products__item-img-content
+                        span.products__item-label Облицовочные плиты
+
+
+        .index-products__section
+            .products__item-img.products__item-img_index.products__item-img_hover
+                .products__item-img-contentHover
+                    a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
+                    br
+                    ul.products__item-img-contentHover-list
+                        li: a(href="#"): span Брекчия
+                        li: a(href="#"): span Брусчатка
+                        li: a(href="#"): span Толстомерные плиты мощения
+
+                .products__item-img-content
+                    span.products__item-label Облицовочные плиты
+        .index-products__section
+            .products__item-img.products__item-img_index.products__item-img_hover
+                .products__item-img-contentHover
+                    a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
+                    br
+                    ul.products__item-img-contentHover-list
+                        li: a(href="#"): span Брекчия
+                        li: a(href="#"): span Брусчатка
+                        li: a(href="#"): span Толстомерные плиты мощения
+
+                .products__item-img-content
+                    span.products__item-label Облицовочные плиты
+        .index-products__section
+            .products__item-img.products__item-img_notBg
+                p Не нашли нужный вид изделия?
+                    br
+                    | Отправьте заявку и наши
+                    br
+                    | менеджеры проконсультируют вас
+
+                button.btn.btn-orange Отправить заявку
+
+    .container.hidden-md-up
+        br
+        .text-center
+            p.text-mobile Не нашли нужный вид изделия? Отправьте заявку и наши менеджеры проконсультируют вас
+            button.btn.btn-orange Отправить заявку
+        hr
+
+    .hidden-md-down
+        .index-block-title.index-block-title_big.text-center
+            h1.index-block-title__title Объекты из нашего камня
+            p.index-block-title__desc Наша компания как поставщик камня поучаствовала в возведении многих значимых объектах по всей России и СНГ.
+
+        .text-center
+            .filter__sections
+                .filter__sections-section
+                    span.filter__sections-title Выберите город:
+                .filter__sections-section(style="width: 250px;")
+                    select
+                        option Челябинск
+                        option item 1
+                        option item 2
+                        option item 3
+
+        br
+        br
+        .container
+            .objects
+                -for(var i =0; i<3; i++)
+                    .objects__section
+                        .objects__left
+                            .objects__item.objects__item_big(style="background-image: url('%=static=%img/content/objects/1.jpg');")
+                                .objects__item-content.objects__item-content_noHover
+                                    p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+
+                                .objects__item-content.objects__item-content_hover
+                                    .row
+                                        .col-lg-9
+                                            p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+                                        .col-lg-3.text-right
+                                            p.objects__item-content-title 6 фото
+
+                                    p.objects__item-content-text Торговый комплекс "Урал"
+                                        br
+                                        | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                                    button.btn.btn-orange Смотреть проект
+
+                        .objects__right
+                            .objects__item(style="background-image: url('%=static=%img/content/objects/2.jpg');")
+                                .objects__item-content.objects__item-content_noHover
+                                    p.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+
+                                .objects__item-content.objects__item-content_hover
+                                    p.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+
+                                    p.objects__item-content-text Торговый комплекс "Урал"
+                                        br
+                                        | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                                    button.btn.btn-orange Смотреть проект
+                            .objects__item(style="background-image: url('%=static=%img/content/objects/3.jpg');")
+                                .objects__item-content.objects__item-content_noHover
+                                    p.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+
+                                .objects__item-content.objects__item-content_hover
+                                    p.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+
+                                    button.btn.btn-orange Смотреть проект
+
+
+
+
+
+    .index-block-title.index-block-title_big.text-center
+        h1.index-block-title__title О компании «Дом Камня»
+
+    .container.text-center.hidden-md-up
+        p.text-mobile Компания «Дом Камня» представлена на российском рынке с 1997 года. С того времени наша организация прошла серьёзный путь развития и зарекомендовала себя в качестве одного из лидеров по производству и продажам изделий из натурального камня.
+        p.text-mobile Сейчас «Дом Камня» - это команда профессионалов, которая находит решения как для малых индивидуальных заказов, так и для крупных компаний с их масштабами. Собственная производственная база позволяет выпускать продукцию высокого качества и в больших объемах.
+        button.btn.btn-orange.btn-width Узнать подробнее о компании
+        br
+
+    .container.hidden-sm-down
+        hr
+        .table-number.hidden-sm-down
+            .table-number__num 20&nbsp;
+                span лет
+            .table-number__desc профессиональной
+                br
+                |работы
+        br
+
+        ul.tabs__nav.tabs__nav_sm.not-styleLink
+            li.active: a(href="#", data-block="#itemsq11"): span: b О компании
+            li: a(href="#", data-block="#itemsq22"): span: b Наше производство
+            li: a(href="#", data-block="#itemsq223"): span: b Отзывы
+
+        br
+        br
+        .tabs__content
+            .tabs__content-item.active#itemsq11
+                p Компания «Дом Камня» представлена на российском рынке с 1997 года. С того времени наша организация прошла серьёзный путь развития и зарекомендовала себя в качестве одного из лидеров по производству и продажам изделий из натурального камня. Сейчас «Дом Камня» - это команда профессионалов, которая находит решения как для малых индивидуальных заказов, так и для крупных компаний с их масштабами. Собственная производственная база позволяет выпускать продукцию высокого качества и в больших объемах.
+                br
+
+                p.h2 Смотрите видео нашего производства:
+                .video-list.not-styleLink
+                    .video-list__preview
+                        a(href="#", data-video="https://www.youtube.com/embed/MlwxGITcioM?rel=0", data-text="Процесс производства").video-list__preview-item.active: +img('content/video-list/1')
+                        a(href="#", data-video="https://www.youtube.com/embed/Xjg4W83fuI8?rel=0", data-text="Процесс производства1").video-list__preview-item: +img('content/video-list/2')
+                        a(href="#", data-video="https://www.youtube.com/embed/BDbkf239NtY?rel=0", data-text="Процесс производства2").video-list__preview-item: +img('content/video-list/3')
+                        a(href="#", data-video="https://www.youtube.com/embed/g4zEV6NxiRM?rel=0", data-text="Процесс производства3").video-list__preview-item: +img('content/video-list/4')
+                    .video-list__video
+                        .video-list__video-el
+                            iframe(src="https://www.youtube.com/embed/MlwxGITcioM" frameborder="0" allowfullscreen)
+                            .video-list__video-content
+                                span Процесс производства
+
+                br
+                .text-center
+                    button.btn.btn-orange Узнать подробнее о компании
+                br
+
+            .tabs__content-item#itemsq22
+                p Наше производство
+            .tabs__content-item#itemsq223
+                p Отзывы
+
 
 
 

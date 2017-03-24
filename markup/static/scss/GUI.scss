@@ -382,12 +382,17 @@ table{
         line-height: normal;
         right: 0;
         margin: 0;
-        top: 6px;
+        top: 50%;
+        margin-top: -7px;
         .caret {
           border-top-color: currentColor;
+          border-top-width: 7px;
         }
       }
     }
+  }
+  &.select-width{
+
   }
 }
 
@@ -399,12 +404,12 @@ table{
   //margin: 10px 0;
   li{
     display: inline-block;
-    padding: 2px;
+    padding: 6.5px;
     &.slick-active{
       button{
         &:after{
-          //background-color: #ffcb08;
-          border-color: #fff;
+          background-color: $mainColor;
+          border-color: $mainColor;
         }
         &:before{
           opacity: 1;
@@ -422,25 +427,11 @@ table{
       &:after{
         content: '';
         display: block;
-        width: 18px;
-        height: 18px;
+        width: 17px;
+        height: 17px;
         background-color: transparent;
-        border: 1px solid transparent;
+        border: 2px solid white;
         border-radius: 50%;
-      }
-      &:before{
-        content: '';
-        width: 8px;
-        height: 8px;
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        display: block;
-        top: 50%;
-        left: 50%;
-        margin-top: -4px;
-        margin-left: -4px;
-        opacity: .7;
       }
     }
   }
@@ -626,6 +617,14 @@ table{
         }
       }
     }
+    &_sm{
+      li {
+        a {
+          padding: 21px 47px;
+          border-radius: 30px;
+        }
+      }
+    }
   }
   &__content{
     &-item{
@@ -732,6 +731,21 @@ table{
     }
   }
 }
+.arrow-center{
+  .slick-arrow{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    &.slick-prev{
+      left: 0;
+    }
+    &.slick-next{
+      right: 0;
+    }
+  }
+}
+
 .color-view{
   display: inline-block;
   color: #1a1b1b;
@@ -781,4 +795,39 @@ table{
       }
     }
   }
+}
+
+.statistics{
+  .slick-arrow{
+    background-color: transparent;
+    fill: #fff;
+    height: 50px;
+    &:hover{
+      background-color: transparent;
+      fill: #e3e3e3;
+    }
+  }
+  &__section{
+    padding: 0 20px;
+  }
+  &__item{
+    &-num{
+      color: #ffb33b;
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 50px;
+    }
+    &-desc{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+  }
+}
+.text-mobile{
+  color: #1a1b1b;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 30px;
+  margin-bottom: 30px;
 }

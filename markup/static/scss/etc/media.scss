@@ -5,7 +5,79 @@ body, html{
   min-width: 320px;
 }
 
+@media screen and (max-width: 1486px) {
+  .objects {
+    &__arrow {
+      &_prev {
+        padding-right: 50px;
+      }
+      &_next {
+        padding-left: 50px;
+      }
+    }
+  }
+}
+
 @include my-media-query(max, map_get($grid-breakpoints, xl) - 1) {
+
+  .header{
+    &-bottom{
+      &__title{
+        font-size: 55px;
+        line-height: 62px;
+      }
+      &__titleSub{
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .index-products{
+    &__section{
+      width: 33.33%;
+    }
+  }
+
+  .stock {
+    &__item {
+      height: 400px;
+      padding-bottom: 117px;
+      &-content {
+        padding: 40px 0;
+      }
+      &-padding{
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      &-title {
+        font-size: 25px;
+        line-height: 32px;
+      }
+      &-text {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      &-price{
+        font-size: 30px;
+        line-height: 30px;
+      }
+      &-bottom {
+        padding-bottom: 40px;
+      }
+      &-table{
+        &-cell{
+          +*{
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+    .slick-arrow {
+      width: 40px;
+    }
+  }
+
   .staff {
     &__setions {
       font-size: 0;
@@ -68,6 +140,52 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, lg) - 1) {
+  .header {
+    &-bottom {
+      padding-top: 20px;
+    }
+  }
+  .statistics{
+    &__section{
+    }
+    &__item{
+      &-num{
+        font-size: 25px;
+        line-height: 35px;
+      }
+      &-desc{
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+  .index-block-title{
+    margin: 37px auto;
+    &__title{
+      font-size: 30px;
+      line-height: 40px;
+    }
+    &__desc{
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+  .table-number{
+    &__num{
+      line-height: 43px;
+      font-size: 70px;
+      span{
+        font-size: 91px;
+      }
+    }
+    &__desc{
+      font-size: 25px;
+      line-height: 35px;
+    }
+    > * + * {
+      padding-left: 27px;
+    }
+  }
   .card {
     &__slider {
       padding-right: 30px;
@@ -242,6 +360,11 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, lg)) {
+  .filter__table{
+    .form-search{
+      margin-top: 3px;
+    }
+  }
   .products{
     &__sections{
       &-section{
@@ -384,7 +507,14 @@ body, html{
 }
 
 @include my-media-query(min, map_get($grid-breakpoints, xl)) {
-
+  .header {
+    &__sections {
+      .bootstrap-select {
+        margin-bottom: -9px;
+        display: block !important;
+      }
+    }
+  }
   .header {
     &-navigation {
       &__form-search {
@@ -409,6 +539,55 @@ body, html{
 }
 
 @include my-media-query(max, map_get($grid-breakpoints, md) - 1) {
+  .header-bottom{
+    &__title{
+      font-size: 40px;
+      line-height: 47px;
+    }
+    &__titleSub{
+      font-size: 17px;
+      line-height: 25px;
+      margin-bottom: 25px;
+    }
+  }
+  .index-block-title{
+    &__title{
+
+    }
+    &__desc{
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+  .table-number{
+    text-align: center;
+    display: block;
+
+    >*{
+      display: block;
+      width: 100%;
+      +*{
+        padding-left: 0;
+        padding-top: 12px;
+      }
+    }
+    &__num{
+    }
+    &__desc{
+    }
+  }
+  .index-products-slider{
+    .products {
+      &__item {
+        &-img-content{
+          text-align: center;
+        }
+        &-label {
+          font-size: 18px;
+        }
+      }
+    }
+  }
   .card {
     > * {
       display: inline-block;
@@ -455,10 +634,11 @@ body, html{
   }
   .filter {
     &__table {
+      text-align: left;
       &-cell {
         width: 100%;
         &__select {
-          width: auto;
+          width: 100%;
         }
       }
     }
@@ -474,13 +654,15 @@ body, html{
   }
 
   .item {
-    line-height: 20px;
-    font-size: 14px;
+    line-height: 26px;
+    font-size: 16px;
     &__img{
-      margin-bottom: 13px;
+      margin-bottom: 15px;
+    }
+    &__title{
     }
     &__titleSub{
-      font-size: 13px;
+      font-size: 15px;
     }
   }
   .itemList{
@@ -554,7 +736,30 @@ body, html{
   }
 }
 
+@media screen and (max-width: 689px) {
+  .stock{
+    &__item{
+      height: 460px;
+      &-bottom {
+        padding-bottom: 98px;
+      }
+      .btn{
+        width: 111%;
+        margin-left: -15px;
+      }
+    }
+  }
+}
+
 @include my-media-query(max, map_get($grid-breakpoints, sm) - 1) {
+  .header-bottom{
+    &__title{
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 26px;
+      margin-bottom: 5px;
+    }
+  }
   .video-list {
     &__preview {
       &-item{

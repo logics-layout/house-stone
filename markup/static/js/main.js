@@ -164,6 +164,134 @@ if ($.fn.slick) {
             },
         ]
     });
+    $('.stock').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 690,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+                }
+            }
+        ]
+    });
+
+    $('.item-listSlider > div').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 690,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 512,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    $('.index-products-slider').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 746,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 512,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+    $('.statistics').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 698,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    $('.objects').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='objects__arrow_prev objects__arrow'><span><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></span></button>",
+        nextArrow: "<button class='objects__arrow_next objects__arrow'><span><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></span></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+    });
 }
 
 if($.fn.selectpicker){
