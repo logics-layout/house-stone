@@ -93,11 +93,11 @@ block content
         hr
         h2 Объекты из гранита Абсолют Блэк
         br
-        .slider-inner.arrow-beyond
+        .slider-inner.arrow-beyond.magnificPopup
             -for(var i = 0; i<2;i++)
-                .slider-inner__section: +img('content/slider-inner/1')
-                .slider-inner__section: +img('content/slider-inner/2')
-                .slider-inner__section: +img('content/slider-inner/3')
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/1.jpg'): +img('content/slider-inner/1')
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/2.jpg'): +img('content/slider-inner/2')
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/3.jpg'): +img('content/slider-inner/3')
 
 
         hr

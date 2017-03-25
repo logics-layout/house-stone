@@ -12,7 +12,7 @@ block content
         .row
             .col-lg-8.col-md-6
                 br.hidden-md-down
-                p Модульная плита  – один из вариантов облицовочной плиты определенной толщины со стандартными размерами. Она относится к числу самых распространенных отделочных материалов и используется как для внешней отделки фасадов строений, так для внутренних ремонтных работ. Благодаря обширной цветовой гамме мрамора и гранита, имеющейся в наличии на складе у нас, а также их особой структуре появляется реальная возможность осуществления самых разнообразных и неожиданных дизайнерских проектов.
+                p Модульная плита – один из вариантов облицовочной плиты определенной толщины со стандартными размерами. Она относится к числу самых распространенных отделочных материалов и используется как для внешней отделки фасадов строений, так для внутренних ремонтных работ. Благодаря обширной цветовой гамме мрамора и гранита, имеющейся в наличии на складе у нас, а также их особой структуре появляется реальная возможность осуществления самых разнообразных и неожиданных дизайнерских проектов.
             .col-lg-4.col-md-6
                 +img('content/inner')
 
@@ -46,12 +46,11 @@ block content
         hr
         h2 Готовые объекты из гранитных и мраморных плит
         br
-        .slider-inner.arrow-beyond
+        .slider-inner.arrow-beyond.magnificPopup
             -for(var i = 0; i<2;i++)
-                .slider-inner__section: +img('content/slider-inner/1')
-                .slider-inner__section: +img('content/slider-inner/2')
-                .slider-inner__section: +img('content/slider-inner/3')
-
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/1.jpg'): +img('content/slider-inner/1')
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/2.jpg'): +img('content/slider-inner/2')
+                .slider-inner__section: a(href='%=static=%img/content/slider-inner/3.jpg'): +img('content/slider-inner/3')
 
         hr
         h2 Преимущества нашей компании
