@@ -6,7 +6,10 @@
   font-size: 14px;
   line-height: 30px;
   color: #fff;
-
+  &_lp{
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
   &__navBlock{
     display: table;
     width: 100%;

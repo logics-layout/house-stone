@@ -8,6 +8,8 @@ mixin item(num)
 
     a(href='#').item.not-styleLink.text-center
         span.db.item__img
+            -if(tpl == 'lp')
+                button.btn.btn-orange.btn-itemImg Узнать цену
             span.db.item__img-default
                 span.db.item__img-bg
                 +img(rowItem.img)

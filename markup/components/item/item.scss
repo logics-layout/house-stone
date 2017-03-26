@@ -10,6 +10,17 @@
     img{
       width: 100%;
     }
+    .btn-itemImg{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 3;
+      transform: translateY(-50%) translateX(-50%);
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      @include tr;
+    }
     &-default{
       position: relative;
       &:after{
@@ -72,6 +83,10 @@
   &:hover{
     .item__title, .item__titleSub{
       border-bottom-color: rgba(0, 0, 0, 0.22);
+    }
+    .btn-itemImg{
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

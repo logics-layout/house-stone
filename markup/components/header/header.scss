@@ -386,6 +386,9 @@
   .header-bottom {
     padding-top: 83px;
   }
+  .header-mobile__content{
+    background-image: none;
+  }
 }
 
 .header-border{
@@ -421,14 +424,18 @@
 
 .header{
   &__advantages{
+    .slick-list{
+      padding-bottom: 20px;
+    }
     &-section{
       position: relative;
+      outline: none;
       +*{
         &:before{
           content: '';
           position: absolute;
-          left: 0;
-          bottom: 0;
+          left: -1px;
+          top: 37px;
           display: block;
           width: 1px;
           height: 90px;
@@ -449,5 +456,29 @@
   }
 }
 
+.header__form{
+  &-title{
+    color: white;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 40px;
+    margin-bottom: 35px;
+  }
+  &-sections{
+    font-size: 0;
+    margin: -2px -10px;
+    &-section{
+      display: inline-block;
+      font-size: 14px;
+      padding: 2px 10px;
+      &_input{
+        width: 38%;
+      }
+      &_btn{
+        width: 22%;
+      }
+    }
+  }
+}
 
 

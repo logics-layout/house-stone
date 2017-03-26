@@ -115,6 +115,8 @@ if ($.fn.slick) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
+                    dots: true,
                 }
             },
             {
@@ -123,6 +125,40 @@ if ($.fn.slick) {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     arrows: false,
+                    dots: true,
+                }
+            },
+        ]
+    });
+
+    $('.slider-inner-objects').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+            {
+                breakpoint: 628,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
                 }
             },
         ]
@@ -260,8 +296,8 @@ if ($.fn.slick) {
         prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
         nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
         // appendDots: $('.header__sliderDots')
-        // autoplay: true,
-        // autoplaySpeed: 3000,
+        autoplay: true,
+        autoplaySpeed: 3000,
         // adaptiveHeight: true,
         responsive: [
             {
@@ -280,6 +316,43 @@ if ($.fn.slick) {
             }
         ]
     });
+
+    $('.header__advantages').slick({
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        dots: false,
+        arrows: true,
+        prevArrow: "<button class='slick-prev slick-arrow'><svg class='icon__arrow-left' width='12px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-left'></use></svg></button>",
+        nextArrow: "<button class='slick-next slick-arrow'><svg class='icon__arrow-right' width='11px' height='21px'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#arrow-right'></use></svg></button>",
+        // appendDots: $('.header__sliderDots')
+        autoplay: true,
+        autoplaySpeed: 3000,
+        // adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 952,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 602,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 462,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
     $('.objects').slick({
         slidesToShow: 1,
         slidesToScroll: 1,

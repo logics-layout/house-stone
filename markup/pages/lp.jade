@@ -1,103 +1,337 @@
-doctype html
-html(class="no-js", lang="ru")
+extends _lp-main
+
+include ../components/item/item
+include ../components/products/products
+
+block head
+    - var headData = {title: "LP"}
+    - var breadcrumb = true
+    - var index = 'header_index'
+
+block content
+    .container
+        .index-block-title(style="width: 100%;")
+            h1.index-block-title__title Каталог гранитной плиты
+            p.index-block-title__desc Широкий размерный ряд натурального гранита из наличия и под заказ
+
+        hr
+
+        .hidden-md-up
+            button.btn.btn-orange.btn-width(data-block="#sdfdsfsdf").toggle-btn Фильтр каталога
+        #sdfdsfsdf.toggle-block
+            br.hidden-md-up
+            .filter__table
+                .filter__table-cell.hidden-md-down
+                    p.filter__title Выберите параметры
 
 
-    - var tpl = 'lp';
-    include _mixin
-    include ../components/head/head
-    include ../components/header/header
-    include ../components/footer/footer
-    include ../components/modal/modal
+                .filter__table-cell.filter__table-cell__select
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Цвет:
+                        .filter__sections-section(style="width: 150px;max-width: 100%;")
+                            select
+                                option Бежевый
+                                option item 1
+                                option item 2
+                                option item 3
+                .filter__table-cell.filter__table-cell__select
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Страна:
+                        .filter__sections-section(style="width: 200px;max-width: 100%;")
+                            select
+                                option Выберите страну
+                                option Все страны
+                                option Российский
+                                option Бразильский
+                                option Индийский
+                                option Казахстанские
+                                option Китайские
+                                option Норвежские
+                                option Украинские
+                .filter__table-cell.text-right.hidden-md-down
+                    button.btn.btn-orange.btn-filter Скачать прайс-лист
 
-    head
-        //- start  block head
-        link(href="%=static=%css/separate-css/slick.css", rel="stylesheet", type="text/css")
-        block head
-        - if(headData)
-            +head(headData)
-        - else
-            +head(head.defaults)
-        //- end  block head
-    body.page
-        |%=symbols=%
+        br
+        .itemList
+            -for(var i = 0; i<18;i++)
+                .itemList__section
+                    +item(i)
+        br
+        br
+        .text-center
+            button.btn.btn-orange.btn-reboot Показать ещё
+                |&nbsp;&nbsp;
+                +icon('reboot')
+        br
 
-        section.page__wrapper
-            +header(index)
-            -if(!breadcrumb)
-                .container
-                    br
-                    ul.breadcrumb.not-styleLink
-                        li: a(href="#"): span Главная
-                        li.active: span О компании
+    hr.two
+    .container
+        .index-block-title(style="width: 100%;")
+            h1.index-block-title__title.index-block-title__title_min «Дом камня»  — Дом отличного сервиса
+            p.index-block-title__desc Покупая гранитные плиты у нас, вы получаете:
 
-            //- Include your components here
-            //- start block content
-            block content
-            //- end block content
-
-
-            .page__buffer
-        .page__footer
-
-            .container
-                .city.not-styleLink
-                    p.city__title Как нас найти:
-                    .city__list.arrow-beyond
-                        -for(var i = 0; i<10;i++)
-                            .city__list-section
-                                .city__item
-                                    .city__item-icon.hidden-xs-down: +icon('map-label')
-                                    .city__item-desc
-                                        p.city__item-title
-                                            span.city__item-title-icon.hidden-sm-up
-                                                +icon('map-label')
-                                                |&nbsp;&nbsp;
-                                            |Ханты-Мансийск
-                                        p.city__item-text 628007, г. Ханты-Мансийск, ул. Строителей, 12б,
-                                            br
-                                            a(href='#') 8 (800) 555-47-57
-                                            br
-                                            a(href='#').city__item-link: span prod@domkam.ru
-
-
-            .callback-footer
-                .container
-                    p.callback-footer__title Отправьте заявку
-                        br.hidden-md-up
-                        |на рассчет стоимости 
-                    p.callback-footer__titleSub прямо сейчас и получите подарок
-                    br
-                    .row
-                        .col-md-6.col-xs-12
-                            .form-group
-                                input(placeholder="Введите ваше имя").form-control
-                            .form-group
-                                input(placeholder="Номер телефона").form-control
-                            .form-group
-                                input(placeholder="Укажите вашу эл. почту").form-control
-                        .col-md-6.col-xs-12
-                            .form-group
-                                textarea(placeholder="Комментарий", style="height:120px").form-control
-                            button.btn.btn-borderBig.btn-black.btn-border.btn-input Отправить
+        .advantages-lp.text-center
+            .advantages-lp__section
+                .advantages-lp__item(style="background-image: url('%=static=%img/content/advantages-lp/1.jpg');")
+                    .advantages-lp__item-content
+                        p.advantages-lp__item-icon: +icon('advice')
+                        p.advantages-lp__item-title Консультацию
+                            br
+                            |персонального менеджера
+            .advantages-lp__section
+                .advantages-lp__item.text-center(style="background-image: url('%=static=%img/content/advantages-lp/2.jpg');")
+                    .advantages-lp__item-content
+                        p.advantages-lp__item-icon: +icon('advantages-2')
+                        p.advantages-lp__item-title Консультацию
+                            br
+                            |персонального менеджера
+            .advantages-lp__section
+                .advantages-lp__item.text-center(style="background-image: url('%=static=%img/content/advantages-lp/3.jpg');")
+                    .advantages-lp__item-content
+                        p.advantages-lp__item-icon: +icon('advantages-3')
+                        p.advantages-lp__item-title Консультацию
+                            br
+                            |персонального менеджера
 
 
-            +footer()
+        br
+        br
+    div(style="overflow: hidden;")
+        .container
+            p.h2 Наши менеджеры:
+            .staff
+                .staff__setions.text-center
+                    .staff__setions-section
+                        .staff__item
+                            .staff__item-img: +img('content/staff_lp/1', 'png')
+                            .staff__item-desc.staff__item-desc_lp
+                                .staff__item-desc-content
+                                    .staff__item-name: b Дмитрий Залетов
+                                    .staff__item-post: i Менеджер отдела продаж
+                                    .staff__item-text
+                                        a(href='#') prod1@domkam.ru
+                                        | &nbsp;доб. 111
+                    .staff__setions-section
+                        .staff__item
+                            .staff__item-img: +img('content/staff_lp/2', 'png')
+                            .staff__item-desc.staff__item-desc_lp
+                                .staff__item-desc-content
+                                    .staff__item-name: b Марина Сандырёва
+                                    .staff__item-post: i Руководитель отдела продаж
+                                    .staff__item-text
+                                        a(href='#') prod1@domkam.ru
+                                        | &nbsp;доб. 111
+                    .staff__setions-section
+                        .staff__item
+                            .staff__item-img: +img('content/staff_lp/3', 'png')
+                            .staff__item-desc.staff__item-desc_lp
+                                .staff__item-desc-content
+                                    .staff__item-name: b Денис Смолин
+                                    .staff__item-post: i Руководитель отдела продаж
+                                    .staff__item-text
+                                        a(href='#') prod1@domkam.ru
+                                        | &nbsp;доб. 111
+                    .staff__setions-section
+                        .staff__item
+                            .staff__item-img: +img('content/staff_lp/4', 'png')
+                            .staff__item-desc.staff__item-desc_lp
+                                .staff__item-desc-content
+                                    .staff__item-name: b Белоус Мария
+                                    .staff__item-post: i Менеджер отдела продаж
+                                    .staff__item-text
+                                        a(href='#') prod1@domkam.ru
+                                        | &nbsp;доб. 111
+                    .staff__setions-section
+                        .staff__item
+                            .staff__item-img: +img('content/staff_lp/5', 'png')
+                            .staff__item-desc.staff__item-desc_lp
+                                .staff__item-desc-content
+                                    .staff__item-name: b Коваль Александр
+                                    .staff__item-post: i Менеджер отдела продаж
+                                    .staff__item-text
+                                        a(href='#') prod1@domkam.ru
+                                        | &nbsp;доб. 111
+    .container
+        br
+        p.h2 Получите консультацию менеджера прямо сейчас
+        br
+        .row
+            .col-md-5.col-xs-12
+                .form-group
+                    input(placeholder="Введите ваше имя").form-control
+                .form-group
+                    input(placeholder="Номер телефона").form-control
+                .form-group
+                    input(placeholder="Укажите вашу эл. почту").form-control
+            .col-md-7.col-xs-12
+                .form-group
+                    textarea(placeholder="Комментарий", style="height:120px").form-control
+                .row
+                    .col-lg-5
+                        button.btn.btn-input.btn-orange.btn-width Жду ответа
+                    .col-lg-7
+                        span.text-formMin Если вас не устраивает качество нашего сервиса, 
+                            br
+                            a(href='#').link-blue напишите на почту
 
-        +modal()
+        hr.two
+        p.h2 Смотрите видео нашего производства:
+        .video-list.not-styleLink
+            .video-list__preview
+                a(href="#", data-video="https://www.youtube.com/embed/MlwxGITcioM?rel=0", data-text="Процесс производства").video-list__preview-item.active: +img('content/video-list/1')
+                a(href="#", data-video="https://www.youtube.com/embed/Xjg4W83fuI8?rel=0", data-text="Процесс производства1").video-list__preview-item: +img('content/video-list/2')
+                a(href="#", data-video="https://www.youtube.com/embed/BDbkf239NtY?rel=0", data-text="Процесс производства2").video-list__preview-item: +img('content/video-list/3')
+                a(href="#", data-video="https://www.youtube.com/embed/g4zEV6NxiRM?rel=0", data-text="Процесс производства3").video-list__preview-item: +img('content/video-list/4')
+            .video-list__video
+                .video-list__video-el
+                    iframe(src="https://www.youtube.com/embed/MlwxGITcioM", frameborder="0", allowfullscreen)
+                    .video-list__video-content
+                        span Процесс производства
 
-        a(href='#').linkTop.not-styleLink
+    .block-bg
+        .container
+            .index-block-title(style="width: 100%;")
+                p.index-block-title__title.index-block-title__title_min Создайте произведение искусства
+                p.index-block-title__desc Свойства гранитных плит от Дома Камня:
 
-        script(src='%=static=%js/separate-js/svg4everybody.min.js')
-        script(src="%=static=%js/separate-js/slick.min.js" type="text/javascript")
-        script svg4everybody();
+            br.hidden-sm-down
+            br
+            .block-bg__list-advantages
+                .block-bg__list-advantages-item
+                    .block-bg__list-advantages-item-title Изготовление по
+                    .block-bg__list-advantages-item-text.block-bg__list-advantages-item-text_big ГОСТ
+                        span у
+                .block-bg__list-advantages-item.block-bg__list-advantages-item_line.hidden-sm-down
 
-        script(src="%=static=%js/separate-js/bootstrap-select.min.js" type="text/javascript")
-        script(src="%=static=%js/separate-js/dropdown.js" type="text/javascript")
-        script(src="%=static=%js/separate-js/modal.js" type="text/javascript")
-        script(src="%=static=%js/separate-js/jquery.magnific-popup.min.js" type="text/javascript")
-        //- start block script
-        block script
-        //- end block script
-        //- Main scripts. You can replace it, but I recommend you to leave it here
-        script(src='%=static=%js/main%=hash=%%=min=%.js')
+                .block-bg__list-advantages-item
+                    .block-bg__list-advantages-item-title.block-bg__list-advantages-item-title_m Поставка гранита из карьеров
+                    .block-bg__list-advantages-item-text России, Украины, Китая,
+                        br
+                        |Индии и Турции
+            br.hidden-sm-down
+            br
+            p.h2 Поэтому гранитные плиты от «Дома Камня»:
+            div(style="overflow: hidden;")
+                .list-block
+                    ul.list
+                        li качественные
+                        li прочные
+                    ul.list
+                        li долговечные
+                        li податливые в обработке
+
+            hr.two
+            p.index-block-title__title.index-block-title__title_min Как происходит покупка
+                br
+                |гранитной плиты у «Дома Камня»
+            br
+            ul.list-step
+                li
+                    .list-step__icon: +icon('treatment')
+                    .list-step__title Вы обращаетесь в “Дом Камня”, наши менеджеры консультируют вас и помогают в подборе плиты
+                li
+                    .list-step__icon: +icon('design')
+                    .list-step__title Оформляем документы,вы оплачиваете счёт
+                li
+                    .list-step__icon: +icon('plate')
+                    .list-step__title Плита обрабатывается и подготавливается к продаже в срок от 3-х дней
+                li
+                    .list-step__icon: +icon('shipping', 'svg-shipping', 148, 78)
+                    .list-step__title Выбираем вместе с вами ТК, контролируем доставку гранитных плит до вашего адреса
+
+    br
+    div(style="overflow: hidden;")
+        .container
+            p.h2.h2_big Объекты, построенные из гранитных плит от «Дома Камня»
+            br
+            .slider-inner-objects.arrow-beyond.magnificPopup.not-styleLink
+                -for(var i = 0; i<2;i++)
+                    .slider-inner-objects__section
+                        a(href='%=static=%img/content/slider-inner/1.jpg').objects__item.objects__item_slider-inner
+                            +img('content/slider-inner/1')
+                            span.db.objects__item-content.objects__item-content_noHover
+                                p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+
+                            span.db.objects__item-content.objects__item-content_hover
+                                span.db.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+
+                                span.db.objects__item-content-text Торговый комплекс "Урал"
+                                    | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                    .slider-inner-objects__section
+                        a(href='%=static=%img/content/slider-inner/2.jpg').objects__item.objects__item_slider-inner
+                            +img('content/slider-inner/2')
+                            span.db.objects__item-content.objects__item-content_noHover
+                                p.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+
+                            span.db.objects__item-content.objects__item-content_hover
+                                span.db.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+
+                                span.db.objects__item-content-text Торговый комплекс "Урал"
+                                    | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                    .slider-inner-objects__section
+                        a(href='%=static=%img/content/slider-inner/3.jpg').objects__item.objects__item_slider-inner
+                            +img('content/slider-inner/3')
+                            span.db.objects__item-content.objects__item-content_noHover
+                                p.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+
+                            span.db.objects__item-content.objects__item-content_hover
+                                span.db.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+
+                                span.db.objects__item-content-text Торговый комплекс "Урал"
+                                    | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+    .container
+        br
+        hr.two
+        .index-block-title(style="width: 100%;")
+            h1.index-block-title__title.index-block-title__title_min Отзывы наших клиентов
+
+        .reviews
+            -for(var i = 0; i<3; i++)
+                .reviews__section
+                    .reviews__item
+                        span.db.reviews__item-name: b Владимир К.
+                        a(href="#").reviews__item-link.link-blue vk.com/id324315809
+                        span.db.reviews__item-text Разнообразный и богатый опыт рамки и место обучения кадров играет важную роль в формировании форм развития.
+
+        br
+        button.btn.btn-orange Оставить отзыв
+    br
+
+block script
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

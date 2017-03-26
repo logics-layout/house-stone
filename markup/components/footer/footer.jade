@@ -1,38 +1,41 @@
 mixin footer(data)
-    footer.footer.not-styleLink
+    - var className = ''
+    -if(tpl == 'lp')
+        - className = 'footer_lp'
+
+    footer.footer.not-styleLink(class=className)
         .container
-
-            .footer__navBlock
-                .footer__navList
-                    p.footer__navList-title Гранит
-                    hr.hidden-sm-down
-                    ul.footer__navList-list
-                        li: a(href="#"): span Слэбы и полуслэбы
-                        li: a(href="#"): span Изделия из гранита
-                .footer__navList
-                    p.footer__navList-title Мрамор
-                    hr.hidden-sm-down
-                    ul.footer__navList-list
-                        li: a(href="#"): span Слэбы и полуслэбы
-                        li: a(href="#"): span Изделия из мрамора
-                .footer__navList
-                    p.footer__navList-title Компания
-                    hr.hidden-sm-down
-                    .footer__navList-listBlock
-                        .footer__navList-listBlock-section
-                            ul.footer__navList-list
-                                li: a(href="#"): span О компании
-                                li: a(href="#"): span Доставка
-                        .footer__navList-listBlock-section
-                            ul.footer__navList-list
-                                li: a(href="#"): span Оплата
-                                li: a(href="#"): span Упаковка
-                        .footer__navList-listBlock-section
-                            ul.footer__navList-list
-                                li: a(href="#"): span Цены
-                                li: a(href="#"): span Контакты
-
-            br
+            -if(tpl != 'lp')
+                .footer__navBlock
+                    .footer__navList
+                        p.footer__navList-title Гранит
+                        hr.hidden-sm-down
+                        ul.footer__navList-list
+                            li: a(href="#"): span Слэбы и полуслэбы
+                            li: a(href="#"): span Изделия из гранита
+                    .footer__navList
+                        p.footer__navList-title Мрамор
+                        hr.hidden-sm-down
+                        ul.footer__navList-list
+                            li: a(href="#"): span Слэбы и полуслэбы
+                            li: a(href="#"): span Изделия из мрамора
+                    .footer__navList
+                        p.footer__navList-title Компания
+                        hr.hidden-sm-down
+                        .footer__navList-listBlock
+                            .footer__navList-listBlock-section
+                                ul.footer__navList-list
+                                    li: a(href="#"): span О компании
+                                    li: a(href="#"): span Доставка
+                            .footer__navList-listBlock-section
+                                ul.footer__navList-list
+                                    li: a(href="#"): span Оплата
+                                    li: a(href="#"): span Упаковка
+                            .footer__navList-listBlock-section
+                                ul.footer__navList-list
+                                    li: a(href="#"): span Цены
+                                    li: a(href="#"): span Контакты
+                br
             .footer__bottomBg
                 .footer__bottomMainBLock
                     .footer__bottom

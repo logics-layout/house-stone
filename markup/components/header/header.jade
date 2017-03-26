@@ -1,39 +1,74 @@
 -if(tpl == 'lp')
     mixin header(data)
         .header(class!=data).not-styleLink.active.header_lp
-            .header__table
-                .header__table-cell.header-desktop
-                    ul.header__nav
-                        li: a(href="#"): span Каталог
-                        li: a(href="#"): span Объекты
-                        li: a(href="#"): span Отзывы
-                        li: a(href="#"): span Контакты
+            .hidden-lg-up
+                .header-mobile
+                    .header-mobile__content
+                        .header-mobile__content-cell.header-mobile__content-cell_icon
+                            .mobile-list-anim
+                                input(type="checkbox", id="header-bottom-toggleMenuMbles", class='toggle-btn', data-block="#navigationMenu2").mobile-list-anim__input
+                                label.menuTopMobel(for="header-bottom-toggleMenuMbles")
+                                    span.menu-mobile
+                                        span.menu-mobile-hamburger.one
+                                        span.menu-mobile-hamburger.two
+                                        span.menu-mobile-hamburger.three
+                        .header-mobile__content-cell
+                            .text-center
+                                a(href='#').header-mobile__phone 8-800-555-47-57
 
-                .header__table-cell.header__table-cell_logo
-                    a(href="#").header__logo
-                        +img('assets/header/white-logo', 'png')
 
-                .header__table-cell.text-right
-                    .header__sections
-                        .header__sections.text-right
-                            .header__sections-section
-                                a(href="#").header__phone
-                                    span.db.header__phone-number 8-800-555-47-57
+                    .header-mobile__navigation#navigationMenu2
+                        .header-mobile__navigation-content
+                            .header-mobile__navigation-list
+                                ul
+                                    li: a(href="#") Каталог камня
+                                    li: a(href="#") Изделия
+                                    li: a(href="#") Услуги
+                                    li: a(href="#") Галерея работ
+                                    li: a(href="#") О компании
+                                    li: a(href="#") Акции
+                                    li: a(href="#") Контакты
 
-                            .header__sections-section
-                                button.btn.btn-white.btn-border.btn-border_big(data-toggle="modal" data-target="#callback") Заказать звонок
-            br
-            .header-border
+            .hidden-md-down
+                .header__table
+                    .header__table-cell.header-desktop
+                        ul.header__nav
+                            li: a(href="#"): span Каталог
+                            li: a(href="#"): span Объекты
+                            li: a(href="#"): span Отзывы
+                            li: a(href="#"): span Контакты
+
+                    .header__table-cell.header__table-cell_logo
+                        a(href="#").header__logo
+                            +img('assets/header/white-logo', 'png')
+
+                    .header__table-cell.text-right
+                        .header__sections
+                            .header__sections.text-right
+                                .header__sections-section
+                                    a(href="#").header__phone
+                                        span.db.header__phone-number 8-800-555-47-57
+
+                                .header__sections-section
+                                    button.btn.btn-white.btn-border.btn-border_big(data-toggle="modal" data-target="#callback") Заказать звонок
+                br
+                .header-border
             .header-bottom
                 .text-center
+                    .hidden-lg-up
+                        +img('assets/header/logo_min', 'png')
+                        br
+                        br
+
                     p.header-bottom__title Гранитная плита
                         br
                         |от производителя по цене
                         br
                         |от 1 392 руб/м2
                         span.header-bottom__title-stiker: +img('/assets/header/stiker', 'png')
-
-                    .header__advantages
+                    br
+                    br
+                    .header__advantages.arrow-two.arrow-center
                         .header__advantages-section
                             .header__advantages-item
                                 .header__advantages-item-icon: +icon('time')
@@ -58,6 +93,25 @@
                                 .header__advantages-item-title Гибкая система
                                     br
                                     |скидок
+
+                    br
+                    br
+                    .container
+                        .header__form
+                            p.header__form-title Успейте купить гранитную плиту по акции до 31 марта.
+                                br
+                                |Отправьте заявку на расчет прямо сейчас
+
+                            .header__form-sections
+                                .header__form-sections-section.header__form-sections-section_input
+                                    .form-group
+                                        input(placeholder="Введите ваше имя").form-control
+                                .header__form-sections-section.header__form-sections-section_input
+                                    .form-group
+                                        input(placeholder="Укажите номер телефона").form-control
+                                .header__form-sections-section.header__form-sections-section_btn
+                                    button.btn.btn-orange.btn-width.btn-input Жду звонка
+                    br
 
 
 - else

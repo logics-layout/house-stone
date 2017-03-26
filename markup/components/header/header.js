@@ -50,12 +50,17 @@ var menuHeaderTopToggle = $('#header-bottom-toggleMenuMble');
 var menuHeaderTopList = $('#navigationMenu');
 var menuHeaderTopToggle2 = $('#header-bottom-toggleMenuMble1');
 var menuHeaderTopList2 = $('#navigationCat');
+var menuHeaderTopToggle3 = $('#header-bottom-toggleMenuMbles');
+var menuHeaderTopList3 = $('#navigationMenu2');
 
 menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
 _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
 
 menuHeaderTopToggle2.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);});
 _fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);
+
+menuHeaderTopToggle3.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList2, true);});
+_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList2, true);
 
 var fnClearNav = function () {
     $('.header-navigation').removeClass('active');
@@ -92,11 +97,11 @@ $(document).click(function(e) {
         block[fn]('active');
     });
 
-    if ((!target.is(menuHeaderTopList) && !target.closest(menuHeaderTopList)[0]) && (!target.is(menuHeaderTopToggle) && !target.is('.menuTopMobel'))) {
+    if (menuHeaderTopToggle[0]&&(!target.is(menuHeaderTopList) && !target.closest(menuHeaderTopList)[0]) && (!target.is(menuHeaderTopToggle) && !target.is('.menuTopMobel'))) {
         menuHeaderTopToggle[0].checked = false;
         _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
     }
-    if ((!target.is(menuHeaderTopList2) && !target.closest(menuHeaderTopList2)[0]) && (!target.is(menuHeaderTopToggle2) && !target.is('.menuTopMobel'))) {
+    if (menuHeaderTopToggle2[0]&&(!target.is(menuHeaderTopList2) && !target.closest(menuHeaderTopList2)[0]) && (!target.is(menuHeaderTopToggle2) && !target.is('.menuTopMobel'))) {
         menuHeaderTopToggle2[0].checked = false;
         _fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);
     }

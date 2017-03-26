@@ -41,6 +41,20 @@ a{
   }
 }
 
+.text-formMin{
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 5px;
+}
+
+a.link-blue{
+  color: #0669b2;
+  @include link-border-color(#0669b2);
+}
+
 .rub{
   letter-spacing: -12px;
   display: inline-block;
@@ -402,6 +416,7 @@ table{
   font-size: 0;
   line-height: 0;
   text-align: center;
+  margin-top: 20px;
   //margin: 10px 0;
   li{
     display: inline-block;
@@ -540,6 +555,17 @@ table{
 }
 
 .filter{
+  &__title{
+    color: #1a1b1b;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    margin: 0;
+    padding: 7px 0;
+    padding-right: 35px;
+    border-right: 1px solid $mainColor;
+    display: inline-block;
+  }
   &__sections{
     >*{
       display: inline-block;
@@ -712,7 +738,7 @@ table{
     fill: #949494;
     &:hover{
       background-color: transparent;
-      fill: #3d3d3d;
+      fill: $mainColor;
     }
   }
 }
