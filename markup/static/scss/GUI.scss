@@ -376,6 +376,7 @@ table{
         max-width: 160px;
         display: block;
         margin-top: 2px;
+        padding-left: 4px;
       }
       .bs-caret {
         background-color: transparent;
@@ -804,7 +805,7 @@ table{
     height: 50px;
     &:hover{
       background-color: transparent;
-      fill: #e3e3e3;
+      fill: $mainColor;
     }
   }
   &__section{

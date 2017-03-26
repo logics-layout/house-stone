@@ -1,6 +1,7 @@
 extends main
 
 include ../components/item/item
+include ../components/products/products
 
 block head
     - var headData = {title: "Главная"}
@@ -62,84 +63,82 @@ block content
             h1.index-block-title__title Каталог камня
             p.index-block-title__desc В наличии большой выбор натурального камня в слэбах и плитах любого размера.
         hr
-        .filter__table
-            .filter__table-cell.hidden-md-down
-                .filter__sections
-                    .filter__sections-section
-                        span.filter__sections-title Выберите вид камня:
-                    .filter__sections-section
-                        ul.tabs__nav.not-styleLink
-                            li.active: a(href="#", data-block="#items11"): span: b Гранит
-                            li: a(href="#", data-block="#items22"): span: b Мрамор
-            .filter__table-cell.filter__table-cell__select.hidden-lg-up
-                .filter__sections
-                    .filter__sections-section
-                        span.filter__sections-title Вид камня:
-                    .filter__sections-section
-                        select
-                            option Гранит
-                            option item 1
-                            option item 2
-                            option item 3
-            .filter__table-cell.filter__table-cell__select
-                .filter__sections
-                    .filter__sections-section
-                        span.filter__sections-title Цвет:
-                    .filter__sections-section
-                        select
-                            option Бежевый
-                            option item 1
-                            option item 2
-                            option item 3
-            .filter__table-cell.filter__table-cell__select
-                .filter__sections
-                    .filter__sections-section
-                        span.filter__sections-title Страна:
-                    .filter__sections-section
-                        select
-                            option Не выбрана
-                            option Все страны
-                            option Российский
-                            option Бразильский
-                            option Индийский
-                            option Казахстанские
-                            option Китайские
-                            option Норвежские
-                            option Украинские
-            .filter__table-cell.filter__table-cell__select.hidden-md-down
-                .hidden-xs-down
-                    .hidden-lg-up
-                        span.filter__sections-title &nbsp;
-
-                .form-search.form-search_hidden
-                    button.form-search__btn: +icon('search')
-                    .form-search__inputs
-                        input(placeholder="Поиск по каталогу").form-search__inputs-input
-
-        br
-        br
         .hidden-md-up
-            .item-listSlider.arrow-beyond
-                div
-                    -for(var i = 0; i<6;i++)
-                        .item-listSlider-section
-                            +item()
+            button.btn.btn-orange.btn-width(data-block="#sdfdsfsdf").toggle-btn Фильтр каталога
+        #sdfdsfsdf.toggle-block
+            br
+            .filter__table
+                .filter__table-cell.hidden-md-down
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Выберите вид камня:
+                        .filter__sections-section
+                            ul.tabs__nav.not-styleLink
+                                li.active: a(href="#", data-block="#items11"): span: b Гранит
+                                li: a(href="#", data-block="#items22"): span: b Мрамор
+                .filter__table-cell.filter__table-cell__select.hidden-lg-up
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Вид камня:
+                        .filter__sections-section
+                            select
+                                option Гранит
+                                option item 1
+                                option item 2
+                                option item 3
+                .filter__table-cell.filter__table-cell__select
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Цвет:
+                        .filter__sections-section
+                            select
+                                option Бежевый
+                                option item 1
+                                option item 2
+                                option item 3
+                .filter__table-cell.filter__table-cell__select
+                    .filter__sections
+                        .filter__sections-section
+                            span.filter__sections-title Страна:
+                        .filter__sections-section
+                            select
+                                option Не выбрана
+                                option Все страны
+                                option Российский
+                                option Бразильский
+                                option Индийский
+                                option Казахстанские
+                                option Китайские
+                                option Норвежские
+                                option Украинские
+                .filter__table-cell.filter__table-cell__select.hidden-md-down
+                    .hidden-xs-down
+                        .hidden-lg-up
+                            span.filter__sections-title &nbsp;
 
-            .text-center
-                p(style="color: #616161;margin-bottom: 8px;margin-top: 18px;") и еще более 40 наименований гранита
-                button.btn.btn-orange.btn-width Смотреть весь гранит
+                    .form-search.form-search_hidden
+                        button.form-search__btn: +icon('search')
+                        .form-search__inputs
+                            input(placeholder="Поиск по каталогу").form-search__inputs-input
 
-        .tabs__content.hidden-sm-down
+        br
+        br
+        .tabs__content
             .tabs__content-item.active#items11
                 .itemList
                     -for(var i = 0; i<36;i++)
                         .itemList__section
-                            +item()
+                            +item(i)
             .tabs__content-item#items22
                 .itemList
                     -for(var i = 0; i<36;i++)
                         .itemList__section
-                            +item()
+                            +item(i)
+
+        .hidden-md-up
+            .text-center
+                p(style="color: #616161;margin-bottom: 8px;margin-top: 18px;") и еще более 40 наименований гранита
+                button.btn.btn-orange.btn-width Смотреть весь гранит
 
         hr
 
@@ -156,69 +155,10 @@ block content
                         span.products__item-label Облицовочные плиты
 
     .index-products.hidden-md-down.not-styleLink
-        -for(var i = 0; i<3;i++)
+        -for(var i = 0; i<11;i++)
             .index-products__section
-                .products__item-img.products__item-img_index.products__item-img_hover
-                    .products__item-img-contentHover
-                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
-                        br
-                        ul.products__item-img-contentHover-list
-                            li: a(href="#"): span Брекчия
-                            li: a(href="#"): span Брусчатка
-                            li: a(href="#"): span Толстомерные плиты мощения
+                +products(i, true)
 
-                    .products__item-img-content
-                        span.products__item-label Облицовочные плиты
-            .index-products__section
-                .products__item-img.products__item-img_index.products__item-img_hover
-                    .products__item-img-contentHover
-                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
-                        br
-                        ul.products__item-img-contentHover-list
-                            li: a(href="#"): span Брекчия
-                            li: a(href="#"): span Брусчатка
-                            li: a(href="#"): span Толстомерные плиты мощения
-
-                    .products__item-img-content
-                        span.products__item-label Облицовочные плиты
-            .index-products__section
-                .products__item-img.products__item-img_index.products__item-img_hover
-                    .products__item-img-contentHover
-                        a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
-                        br
-                        ul.products__item-img-contentHover-list
-                            li: a(href="#"): span Брекчия
-                            li: a(href="#"): span Брусчатка
-                            li: a(href="#"): span Толстомерные плиты мощения
-
-                    .products__item-img-content
-                        span.products__item-label Облицовочные плиты
-
-
-        .index-products__section
-            .products__item-img.products__item-img_index.products__item-img_hover
-                .products__item-img-contentHover
-                    a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
-                    br
-                    ul.products__item-img-contentHover-list
-                        li: a(href="#"): span Брекчия
-                        li: a(href="#"): span Брусчатка
-                        li: a(href="#"): span Толстомерные плиты мощения
-
-                .products__item-img-content
-                    span.products__item-label Облицовочные плиты
-        .index-products__section
-            .products__item-img.products__item-img_index.products__item-img_hover
-                .products__item-img-contentHover
-                    a(href="#").products__item-img-contentHover-title: span Материалы для дорожного благоустройства
-                    br
-                    ul.products__item-img-contentHover-list
-                        li: a(href="#"): span Брекчия
-                        li: a(href="#"): span Брусчатка
-                        li: a(href="#"): span Толстомерные плиты мощения
-
-                .products__item-img-content
-                    span.products__item-label Облицовочные плиты
         .index-products__section
             .products__item-img.products__item-img_notBg
                 p Не нашли нужный вид изделия?
@@ -254,47 +194,48 @@ block content
 
         br
         br
-        .container
-            .objects
-                -for(var i =0; i<3; i++)
-                    .objects__section
-                        .objects__left
-                            .objects__item.objects__item_big(style="background-image: url('%=static=%img/content/objects/1.jpg');")
-                                .objects__item-content.objects__item-content_noHover
-                                    p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+        div(style="overflow: hidden;")
+            .container.not-styleLink
+                .objects
+                    -for(var i =0; i<3; i++)
+                        .objects__section
+                            .objects__left
+                                a.db.objects__item.objects__item_big(href="#", style="background-image: url('%=static=%img/content/objects/1.jpg');")
+                                    span.db.objects__item-content.objects__item-content_noHover
+                                        p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
 
-                                .objects__item-content.objects__item-content_hover
-                                    .row
-                                        .col-lg-9
-                                            p.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
-                                        .col-lg-3.text-right
-                                            p.objects__item-content-title 6 фото
+                                    span.db.objects__item-content.objects__item-content_hover
+                                        span.db.row
+                                            span.db.col-lg-9
+                                                span.db.objects__item-content-title.ttu ТРК “УРАЛ”  /  ЧЕЛЯБИНСК
+                                            span.db.col-lg-3.text-right
+                                                span.db.objects__item-content-title 6 фото
 
-                                    p.objects__item-content-text Торговый комплекс "Урал"
-                                        br
-                                        | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
-                                    button.btn.btn-orange Смотреть проект
+                                        span.db.objects__item-content-text Торговый комплекс "Урал"
+                                            br
+                                            | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                                        button.btn.btn-orange Смотреть проект
 
-                        .objects__right
-                            .objects__item(style="background-image: url('%=static=%img/content/objects/2.jpg');")
-                                .objects__item-content.objects__item-content_noHover
-                                    p.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+                            .objects__right
+                                a.db.objects__item(href="#", style="background-image: url('%=static=%img/content/objects/2.jpg');")
+                                    span.db.objects__item-content.objects__item-content_noHover
+                                        span.db.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
 
-                                .objects__item-content.objects__item-content_hover
-                                    p.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
+                                    span.db.objects__item-content.objects__item-content_hover
+                                        span.db.objects__item-content-title.ttu Мебельный центр  /  ЧЕЛЯБИНСК
 
-                                    p.objects__item-content-text Торговый комплекс "Урал"
-                                        br
-                                        | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
-                                    button.btn.btn-orange Смотреть проект
-                            .objects__item(style="background-image: url('%=static=%img/content/objects/3.jpg');")
-                                .objects__item-content.objects__item-content_noHover
-                                    p.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+                                        span.db.objects__item-content-text Торговый комплекс "Урал"
+                                            br
+                                            | На данном объекте выполнялась облицовка цоколя гранитной плиткой Цезарь (Padang Dark).
+                                        button.btn.btn-orange Смотреть проект
+                                a.db.objects__item(href="#", style="background-image: url('%=static=%img/content/objects/3.jpg');")
+                                    span.db.objects__item-content.objects__item-content_noHover
+                                        span.db.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
 
-                                .objects__item-content.objects__item-content_hover
-                                    p.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
+                                    span.db.objects__item-content.objects__item-content_hover
+                                        span.db.objects__item-content-title.ttu “МЕТРАН”  /  ЧЕЛЯБИНСК
 
-                                    button.btn.btn-orange Смотреть проект
+                                        button.btn.btn-orange Смотреть проект
 
 
 

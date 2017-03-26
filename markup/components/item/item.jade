@@ -1,17 +1,16 @@
 mixin item(num)
-    - if(!_fn) _fn = 'col'
-
-    - var discount = false
-
-    - if(num%2==0) discount = true
-
+    - num = num || 0;
+    - var rowItem = {}
+    - if(item.data[num])
+        - rowItem = item.data[num]
+    - else
+        - rowItem = item.data[0]
 
     a(href='#').item.not-styleLink.text-center
         span.db.item__img
             span.db.item__img-default
                 span.db.item__img-bg
-                +img('assets/item/1')
-        span.item__title Айвори Браун
+                +img(rowItem.img)
+        span.item__title= rowItem.title
         br
-        span.item__titleSub (Ivory Brown)
-
+        span.item__titleSub= rowItem.titleSub

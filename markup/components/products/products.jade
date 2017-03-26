@@ -1,0 +1,28 @@
+mixin products(num, hover)
+    - var itemRow = {}
+    - var className = ''
+
+    - if(products.data[num])
+        - itemRow = products.data[num];
+    - else
+        - itemRow = products.data[0];
+
+    - if(hover)
+        - className = 'products__item-img_index products__item-img_hover';
+
+    .products__item
+        .products__item-img(class!=className, style="background-image: url('"+itemRow.img+"');")
+            - if(hover)
+                .products__item-img-contentHover
+                    a(href="#").products__item-img-contentHover-title: span= itemRow.title
+                    br
+                    ul.products__item-img-contentHover-list
+                        -for(var i = 0; i < itemRow.list.length; i++)
+                            li: a(href="#"): span= itemRow.list[i]
+
+            .products__item-img-content
+                span.products__item-label= itemRow.title
+        - if(!hover)
+            ul.products__item-list
+                -for(var i = 0; i < itemRow.list.length; i++)
+                    li: a(href="#"): span= itemRow.list[i]

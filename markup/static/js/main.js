@@ -458,3 +458,15 @@ $('.video-list__preview-item').click(function (e) {
     $('.video-list__video-el iframe').attr('src', dataAttr.video);
     $('.video-list__video-content span').text(dataAttr.text);
 });
+
+$('.toggle-btn').click(function(e){
+    var _this = $(this);
+        block = $(_this.data('block'));
+
+    if(block[0]){
+        block.stop().slideToggle(300);
+    }
+
+});
+
+

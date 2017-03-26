@@ -12,7 +12,6 @@
       background-image: none;
     }
   }
-
   &-mobile{
     .mobile-list-anim {
       input[type="checkbox"] {
@@ -147,7 +146,6 @@
       }
     }
   }
-
   &-desktop{
     .mobile-list-anim {
       input[type="checkbox"] {
@@ -172,7 +170,6 @@
       }
     }
   }
-
   &__table{
     display: table;
     width: 100%;
@@ -248,6 +245,20 @@
       opacity: 1;
       visibility: visible;
     }
+    &__clear{
+      position: absolute;
+      right: 0;
+      top: 0;
+      @include btn-clear;
+      padding: 30px 60px;
+      padding-top: 82px;
+      svg{
+        display: block;
+      }
+      &:hover{
+        fill: $mainColor;
+      }
+    }
     &__menu-list{
       @include nl;
       font-size: 0;
@@ -319,12 +330,24 @@
   &-bottom{
     color: white;
     padding-top: 120px;
+    .container{
+      max-width: 100%;
+    }
     &__title{
+      position: relative;
+      display: table;
       font-size: 70px;
       font-weight: 900;
       line-height: 75px;
-      margin: 0;
+      margin: 0 auto;
       margin-bottom: 20px;
+      &-stiker{
+        position: absolute;
+        top: -66px;
+        right: 0;
+        display: block;
+        pointer-events: none;
+      }
     }
     &__titleSub{
       font-size: 26px;
@@ -347,11 +370,84 @@
   }
 }
 
+.header_lp{
+  background-image: url('%=static=%assets/header/bg_lp.jpg');
+  .header__table{
+  }
+  .header__sections-section{
+    vertical-align: middle;
+  }
+  .header__phone{
+    display: block;
+  }
+  .header-bottom__title{
+    font-size: 65px;
+  }
+  .header-bottom {
+    padding-top: 83px;
+  }
+}
 
+.header-border{
+  height: 1px;
+  background-color: #f2f1f0;
+  margin: 0 -50px;
 
+}
+.header__nav{
+  @include nl;
+  font-size: 0;
+  margin: 0 -25px;
+  li{
+    display: inline-block;
+    a{
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: normal;
+      padding: 8px 25px;
+      display: block;
+      span{
+        border-bottom: 1px solid transparent;
+      }
+      &:hover{
+        span{
+          border-bottom-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+    }
+  }
+}
 
-
-
+.header{
+  &__advantages{
+    &-section{
+      position: relative;
+      +*{
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          display: block;
+          width: 1px;
+          height: 90px;
+          background-color: white;
+        }
+      }
+    }
+    &-item{
+      &-icon{
+        fill: $mainColor;
+      }
+      &-title{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 30px;
+      }
+    }
+  }
+}
 
 
 

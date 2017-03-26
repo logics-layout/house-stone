@@ -1,265 +1,13 @@
-mixin header(data)
-    .header(class!=data).not-styleLink.active
-
-        .hidden-lg-up
-            .header-mobile
-                .header-mobile__content
-                    .header-mobile__content-cell.header-mobile__content-cell_icon
-                        .mobile-list-anim
-                            input(type="checkbox", id="header-bottom-toggleMenuMble", class='toggle-btn', data-block="#navigationMenu").mobile-list-anim__input
-                            label.menuTopMobel(for="header-bottom-toggleMenuMble")
-                                span.menu-mobile
-                                    span.menu-mobile-hamburger.one
-                                    span.menu-mobile-hamburger.two
-                                    span.menu-mobile-hamburger.three
-                    .header-mobile__content-cell
-                        .row
-                            .col-sm-6.col-xs-12
-                                select.select-inner.select-inner_mobile
-                                    option Челябинск
-                                    option item 1
-                                    option item 2
-                                    option item 3
-                                    option item 4
-                                    option item 5
-                                    option item 6
-                                    option item 7
-                            .col-sm-6.text-right.hidden-xs-down
-                                a(href='#').header-mobile__phone 8-800-555-47-57
-
-                    .header-mobile__content-cell.header-mobile__content-cell_icon
-                        .mobile-list-anim
-                            input.off(type="checkbox", id="header-bottom-toggleMenuMble1", class='toggle-btn', data-block="#navigationCat").mobile-list-anim__input
-                            label.menuTopMobel(for="header-bottom-toggleMenuMble1")
-                                span.menu-icon: +icon('directory')
-
-                .header-mobile__navigation#navigationMenu
-                    .header-mobile__navigation-content
-                        .header-mobile__navigation-list
-                            ul
-                                li: a(href="#") Каталог камня
-                                li
-                                    a(href="#") Изделия
-                                        em
-                                    ul
-                                        li: a(href='#') Возрождение
-                                        li: a(href='#') Габбро-Карелия
-                                        li: a(href='#') Гранатовый Амфиболит
-                                        li: a(href='#') Дымовский (Балтийский)
-                                        li: a(href='#') Исетский
-                                        li: a(href='#') Камбулатовский (Камбулакский)
-                                        li: a(href='#') Лисья Горка
-                                        li: a(href='#') Мансуровский
-                                        li: a(href='#') Осеевский
-                                        li: a(href='#') Сибирский (Ural Gray)
-                                        li: a(href='#') Суховязский
-                                        li: a(href='#') Южно-Султаевский
-                                        li: a(href='#') Емельяновский (Rosso Toledo)
-                                        li: a(href='#') Капустинский (Rosso Santiago)
-
-
-                                li: a(href="#") Услуги
-                                li: a(href="#") Галерея работ
-                                li: a(href="#") О компании
-                                li: a(href="#") Акции
-                                li: a(href="#") Контакты
-
-                .header-mobile__navigation#navigationCat
-                    .header-mobile__navigation-content
-                        .form-search
-                            .form-search__inputs
-                                input(placeholder="Поиск по каталогу").form-search__inputs-input
-                            button.form-search__btn: +icon('search')
-                        .header-mobile__navigation-list
-                            ul
-                                li: a(href="#") Каталог камня
-                                li
-                                    a(href="#") Изделия
-                                        em
-                                    ul
-                                        li: a(href='#') Возрождение
-                                        li: a(href='#') Габбро-Карелия
-                                        li: a(href='#') Гранатовый Амфиболит
-                                        li: a(href='#') Дымовский (Балтийский)
-                                        li: a(href='#') Исетский
-                                        li: a(href='#') Камбулатовский (Камбулакский)
-                                        li: a(href='#') Лисья Горка
-                                        li: a(href='#') Мансуровский
-                                        li: a(href='#') Осеевский
-                                        li: a(href='#') Сибирский (Ural Gray)
-                                        li: a(href='#') Суховязский
-                                        li: a(href='#') Южно-Султаевский
-                                        li: a(href='#') Емельяновский (Rosso Toledo)
-                                        li: a(href='#') Капустинский (Rosso Santiago)
-
-
-                                li: a(href="#") Услуги
-                                li: a(href="#") Галерея работ
-                                li: a(href="#") О компании
-                                li: a(href="#") Акции
-                                li: a(href="#") Контакты
-
-
-        .hidden-md-down
-            .header-navigation(data-for="header-bottom-toggleMenuMbl")
-                .container
-                    .text-center
-                        +img('assets/header/logo', 'png')
-                        br
-                        br
-                        br
-                        br
-                        br
-                        br
-                        br
-
-                        ul.header-navigation__menu-list
-                            li: a(href="#"): span Каталог камня
-                            li: a(href="#"): span Изделия
-                            li: a(href="#"): span Услуги
-                        ul.header-navigation__menu-list
-                            li: a(href="#"): span Галерея работ
-                            li: a(href="#"): span О компании
-                            li: a(href="#"): span Акции
-                            li: a(href="#"): span Контакты
-
-            .header-navigation(data-for="header-bottom-toggleMenuMbl1")
-                .container
-                    .text-center
-                        +img('assets/header/logo', 'png')
-                    br
-                    .row
-                        .col-lg-8
-                            ul.tabs__nav.tabs__nav_big
-                                li.active: a(href="#", data-block="#items1"): span Гранит
-                                li: a(href="#", data-block="#items2"): span Мрамор
-                                li: a(href="#", data-block="#items3"): span Изделия из камня
-                        .col-lg-4
-                            .header-navigation__form-search.text-right
-                                .form-search
-                                    .form-search__inputs
-                                        input(placeholder="Поиск по каталогу").form-search__inputs-input.form-search__inputs-input_borderNot
-                                    button.form-search__btn: +icon('search')
-
-                    br
-                    .tabs__content
-                        .tabs__content-item.active#items1
-                            .header-navigation__category-list
-                                ul
-                                    li: a(href='#') Возрождение
-                                    li: a(href='#') Габбро-Карелия
-                                    li: a(href='#') Гранатовый Амфиболит
-                                    li: a(href='#') Дымовский (Балтийский)
-                                    li: a(href='#') Исетский
-                                    li: a(href='#') Камбулатовский (Камбулакский)
-                                    li: a(href='#') Лисья Горка
-                                    li: a(href='#') Мансуровский
-                                    li: a(href='#') Осеевский
-                                    li: a(href='#') Сибирский (Ural Gray)
-                                    li: a(href='#') Суховязский
-                                    li: a(href='#') Южно-Султаевский
-                                    li: a(href='#') Емельяновский (Rosso Toledo)
-                                    li: a(href='#') Капустинский (Rosso Santiago)
-
-                                ul
-                                    li: a(href="#") Междуреченский
-                                    li: a(href="#") Покостовский (Grey Ukraine)
-                                    li: a(href="#") Алмонд Мав (Almond Mauve)
-                                    li: a(href="#") Баттерфляй Грин (Butterfly Green)
-                                    li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
-                                    li: a(href="#") Мапл Ред G-562 (Maple Red)
-                                    li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
-                                    li: a(href="#") Парпл Грин (Purple Green)
-                                    li: a(href="#") Пич Ред G-687 (Peach Red)
-                                    li: a(href="#") Роял Вайт G-603 (Royal White)
-                                    li: a(href="#") Сансет Голд G-682 (Sunset Gold)
-                                    li: a(href="#") Сезам Блэк G-654 (Padang Dark)
-                                    li: a(href="#") Синди Грин (Cindy Green)
-                                    li: a(href="#") Чайна Грин G-674 (China Green)
-                                ul
-                                    li: a(href="#") Шанкси Блэк G-777 (Shanxi Black)
-                                    li: a(href="#") Жельтау "Надежда"
-                                    li: a(href="#") Жельтау-2
-                                    li: a(href="#") Жельтау-5  Куртинский
-                                    li: a(href="#") Сары Тас
-                                    li: a(href="#") Абсолют Блэк (Absolute Black)
-                                    li: a(href="#") Айвори Браун (Ivory Brown)
-                                    li: a(href="#") Блэк Гэлэкси (Nero Star Galaxy)
-                                    li: a(href="#") Империал Ред (Imperial Red)
-                                    li: a(href="#") Кашмир Вайт (Kashmir White)
-                                    li: a(href="#") Мультиколор Ред (Multicolor Red)
-                                    li: a(href="#") Нью Империал Ред (New Imperial Red)
-                                    li: a(href="#") Парадизо (Paradiso)
-                        .tabs__content-item#items2
-                            .header-navigation__category-list
-                                ul
-                                    li: a(href='#') Возрождение
-                                    li: a(href='#') Габбро-Карелия
-                                    li: a(href='#') Гранатовый Амфиболит
-                                    li: a(href='#') Дымовский (Балтийский)
-                                    li: a(href='#') Исетский
-                                    li: a(href='#') Камбулатовский (Камбулакский)
-                                    li: a(href='#') Лисья Горка
-                                    li: a(href='#') Мансуровский
-                                    li: a(href='#') Осеевский
-                                    li: a(href='#') Сибирский (Ural Gray)
-                                    li: a(href='#') Суховязский
-                                    li: a(href='#') Южно-Султаевский
-                                    li: a(href='#') Емельяновский (Rosso Toledo)
-                                    li: a(href='#') Капустинский (Rosso Santiago)
-
-                                ul
-                                    li: a(href="#") Междуреченский
-                                    li: a(href="#") Покостовский (Grey Ukraine)
-                                    li: a(href="#") Алмонд Мав (Almond Mauve)
-                                    li: a(href="#") Баттерфляй Грин (Butterfly Green)
-                                    li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
-                                    li: a(href="#") Мапл Ред G-562 (Maple Red)
-                                    li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
-                                    li: a(href="#") Парпл Грин (Purple Green)
-                                    li: a(href="#") Пич Ред G-687 (Peach Red)
-                                    li: a(href="#") Роял Вайт G-603 (Royal White)
-                                    li: a(href="#") Сансет Голд G-682 (Sunset Gold)
-                                    li: a(href="#") Сезам Блэк G-654 (Padang Dark)
-                                    li: a(href="#") Синди Грин (Cindy Green)
-                                    li: a(href="#") Чайна Грин G-674 (China Green)
-                        .tabs__content-item#items3
-                            .header-navigation__category-list
-                                ul
-                                    li: a(href='#') Возрождение
-                                    li: a(href='#') Габбро-Карелия
-                                    li: a(href='#') Гранатовый Амфиболит
-                                    li: a(href='#') Дымовский (Балтийский)
-                                    li: a(href='#') Исетский
-                                    li: a(href='#') Камбулатовский (Камбулакский)
-                                    li: a(href='#') Лисья Горка
-                                    li: a(href='#') Мансуровский
-                                    li: a(href='#') Осеевский
-                                    li: a(href='#') Сибирский (Ural Gray)
-                                    li: a(href='#') Суховязский
-                                    li: a(href='#') Южно-Султаевский
-                                    li: a(href='#') Емельяновский (Rosso Toledo)
-                                    li: a(href='#') Капустинский (Rosso Santiago)
-
-
+-if(tpl == 'lp')
+    mixin header(data)
+        .header(class!=data).not-styleLink.active.header_lp
             .header__table
                 .header__table-cell.header-desktop
-                    .header__sections
-                        .header__sections-section
-                            .mobile-list-anim.mobile-list-anim_menu
-                                input(type="checkbox", id="header-bottom-toggleMenuMbl").mobile-list-anim__input
-                                label.menuTopMobel(for="header-bottom-toggleMenuMbl")
-                                    span.menu-mobile
-                                        span.menu-mobile-hamburger.one
-                                        span.menu-mobile-hamburger.two
-                                        span.menu-mobile-hamburger.three
-                                    span.menu-text.hidden-xs-down Меню
-                        .header__sections-section
-                            .mobile-list-anim
-                                input.off(type="checkbox", id="header-bottom-toggleMenuMbl1").mobile-list-anim__input
-                                label.menuTopMobel(for="header-bottom-toggleMenuMbl1")
-                                    span.menu-icon: +icon('directory')
-                                    span.menu-text.hidden-xs-down Каталог
+                    ul.header__nav
+                        li: a(href="#"): span Каталог
+                        li: a(href="#"): span Объекты
+                        li: a(href="#"): span Отзывы
+                        li: a(href="#"): span Контакты
 
                 .header__table-cell.header__table-cell_logo
                     a(href="#").header__logo
@@ -267,96 +15,412 @@ mixin header(data)
 
                 .header__table-cell.text-right
                     .header__sections
-                        .header__sections-section
-                                select.select-inner.select-inner_mobile
-                                    option Челябинск
-                                    option item 1
-                                    option item 2
-                                    option item 3
-                                    option item 4
-                                    option item 5
-                                    option item 6
-                                    option item 7
                         .header__sections.text-right
                             .header__sections-section
                                 a(href="#").header__phone
-                                    span.header__phone-title Контакты
                                     span.db.header__phone-number 8-800-555-47-57
 
                             .header__sections-section
-                                button.btn.btn-orange(data-toggle="modal" data-target="#callback") Заказать звонок
-
-        -if(data)
+                                button.btn.btn-white.btn-border.btn-border_big(data-toggle="modal" data-target="#callback") Заказать звонок
+            br
+            .header-border
             .header-bottom
-                .container
-                    .text-center
+                .text-center
+                    p.header-bottom__title Гранитная плита
+                        br
+                        |от производителя по цене
+                        br
+                        |от 1 392 руб/м2
+                        span.header-bottom__title-stiker: +img('/assets/header/stiker', 'png')
 
-                        .hidden-lg-up
-                            +img('assets/header/logo_min', 'png')
-                            br
-                            br
+                    .header__advantages
+                        .header__advantages-section
+                            .header__advantages-item
+                                .header__advantages-item-icon: +icon('time')
+                                .header__advantages-item-title Изготовление
+                                    br
+                                    |от 3 дней
+                        .header__advantages-section
+                            .header__advantages-item
+                                .header__advantages-item-icon: +icon('shipping')
+                                .header__advantages-item-title Доставка по всей РФ
+                                    br
+                                    |и странам СНГ
+                        .header__advantages-section
+                            .header__advantages-item
+                                .header__advantages-item-icon: +icon('guarantee')
+                                .header__advantages-item-title Гарантия качества
+                                    br
+                                    |и собственное производство
+                        .header__advantages-section
+                            .header__advantages-item
+                                .header__advantages-item-icon: +icon('discount')
+                                .header__advantages-item-title Гибкая система
+                                    br
+                                    |скидок
 
-                        .header-bottom__title.hidden-xs-down Производство изделий
-                            br
-                            |из гранита и мрамора
 
-                        .header-bottom__title.hidden-sm-up Производство
-                            br
-                            | изделий из гранита
-                            br
-                            |и мрамора
+- else
+    mixin header(data)
+        .header(class!=data).not-styleLink.active
+            .hidden-lg-up
+                .header-mobile
+                    .header-mobile__content
+                        .header-mobile__content-cell.header-mobile__content-cell_icon
+                            .mobile-list-anim
+                                input(type="checkbox", id="header-bottom-toggleMenuMble", class='toggle-btn', data-block="#navigationMenu").mobile-list-anim__input
+                                label.menuTopMobel(for="header-bottom-toggleMenuMble")
+                                    span.menu-mobile
+                                        span.menu-mobile-hamburger.one
+                                        span.menu-mobile-hamburger.two
+                                        span.menu-mobile-hamburger.three
+                        .header-mobile__content-cell
+                            .row
+                                .col-sm-6.col-xs-12
+                                    select.select-inner.select-inner_mobile
+                                        option Челябинск
+                                        option item 1
+                                        option item 2
+                                        option item 3
+                                        option item 4
+                                        option item 5
+                                        option item 6
+                                        option item 7
+                                .col-sm-6.text-right.hidden-xs-down
+                                    a(href='#').header-mobile__phone 8-800-555-47-57
 
-                        .header-bottom__titleSub.hidden-sm-down Мы будем рады видеть Вас в числе наших
-                            br
-                            |счастливых клиентов
+                        .header-mobile__content-cell.header-mobile__content-cell_icon
+                            .mobile-list-anim
+                                input.off(type="checkbox", id="header-bottom-toggleMenuMble1", class='toggle-btn', data-block="#navigationCat").mobile-list-anim__input
+                                label.menuTopMobel(for="header-bottom-toggleMenuMble1")
+                                    span.menu-icon: +icon('directory')
 
-                        .hidden-sm-down
-                            button.btn.btn-orange Перейти в каталог камня
-                            br
-                            br
-                            br
+                    .header-mobile__navigation#navigationMenu
+                        .header-mobile__navigation-content
+                            .header-mobile__navigation-list
+                                ul
+                                    li: a(href="#") Каталог камня
+                                    li
+                                        a(href="#") Изделия
+                                            em
+                                        ul
+                                            li: a(href='#') Возрождение
+                                            li: a(href='#') Габбро-Карелия
+                                            li: a(href='#') Гранатовый Амфиболит
+                                            li: a(href='#') Дымовский (Балтийский)
+                                            li: a(href='#') Исетский
+                                            li: a(href='#') Камбулатовский (Камбулакский)
+                                            li: a(href='#') Лисья Горка
+                                            li: a(href='#') Мансуровский
+                                            li: a(href='#') Осеевский
+                                            li: a(href='#') Сибирский (Ural Gray)
+                                            li: a(href='#') Суховязский
+                                            li: a(href='#') Южно-Султаевский
+                                            li: a(href='#') Емельяновский (Rosso Toledo)
+                                            li: a(href='#') Капустинский (Rosso Santiago)
 
-                        .statistics.arrow-center.arrow-two
-                            .statistics__section
-                                .statistics__item
-                                    .statistics__item-num 5+
-                                    .statistics__item-desc стран-поставщиков
-                                        br.hidden-md-down
-                                        |&nbsp;Россия, Украина, Китай, Индия, Турция
 
-                            .statistics__section
-                                .statistics__item
-                                    .statistics__item-num 20
-                                    .statistics__item-desc лет профессиональной работы
-                                        br.hidden-md-down
-                                        |&nbsp;Собственное производство и галерея
-                                        br.hidden-md-down
-                                        |&nbsp;натурального камня
+                                    li: a(href="#") Услуги
+                                    li: a(href="#") Галерея работ
+                                    li: a(href="#") О компании
+                                    li: a(href="#") Акции
+                                    li: a(href="#") Контакты
 
-                            .statistics__section
-                                .statistics__item
-                                    .statistics__item-num 60+
-                                    .statistics__item-desc объектов монументальной
-                                        br.hidden-md-down
-                                        |&nbsp;скульптуры и памятников архитектуры
+                    .header-mobile__navigation#navigationCat
+                        .header-mobile__navigation-content
+                            .form-search
+                                .form-search__inputs
+                                    input(placeholder="Поиск по каталогу").form-search__inputs-input
+                                button.form-search__btn: +icon('search')
+                            .header-mobile__navigation-list
+                                ul
+                                    li: a(href="#") Каталог камня
+                                    li
+                                        a(href="#") Изделия
+                                            em
+                                        ul
+                                            li: a(href='#') Возрождение
+                                            li: a(href='#') Габбро-Карелия
+                                            li: a(href='#') Гранатовый Амфиболит
+                                            li: a(href='#') Дымовский (Балтийский)
+                                            li: a(href='#') Исетский
+                                            li: a(href='#') Камбулатовский (Камбулакский)
+                                            li: a(href='#') Лисья Горка
+                                            li: a(href='#') Мансуровский
+                                            li: a(href='#') Осеевский
+                                            li: a(href='#') Сибирский (Ural Gray)
+                                            li: a(href='#') Суховязский
+                                            li: a(href='#') Южно-Султаевский
+                                            li: a(href='#') Емельяновский (Rosso Toledo)
+                                            li: a(href='#') Капустинский (Rosso Santiago)
 
-                        .hidden-md-up
-                            br
-                            a(href="tel:88005554757").header-bottom__phone
-                                i.s-phone-or
-                                | 8-800-555-47-57
-                            button.btn.btn-orange Перейти в каталог камня
 
-                        .hidden-lg-up
-                            br.hidden-xs-down
-                            br
+                                    li: a(href="#") Услуги
+                                    li: a(href="#") Галерея работ
+                                    li: a(href="#") О компании
+                                    li: a(href="#") Акции
+                                    li: a(href="#") Контакты
 
 
             .hidden-md-down
-                br
-                br
-                .text-center
-                    i.s-mouse
+                .header-navigation(data-for="header-bottom-toggleMenuMbl")
+                    .container
+                        .text-center
+                            +img('assets/header/logo', 'png')
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+                            br
+
+                            ul.header-navigation__menu-list
+                                li: a(href="#"): span Каталог камня
+                                li: a(href="#"): span Изделия
+                                li: a(href="#"): span Услуги
+                            ul.header-navigation__menu-list
+                                li: a(href="#"): span Галерея работ
+                                li: a(href="#"): span О компании
+                                li: a(href="#"): span Акции
+                                li: a(href="#"): span Контакты
+
+                .header-navigation(data-for="header-bottom-toggleMenuMbl1")
+                    .container
+                        button.header-navigation__clear: +icon('clear')
+                        .text-center
+                            +img('assets/header/logo', 'png')
+                        br
+                        .row
+                            .col-lg-8
+                                ul.tabs__nav.tabs__nav_big
+                                    li.active: a(href="#", data-block="#items1"): span Гранит
+                                    li: a(href="#", data-block="#items2"): span Мрамор
+                                    li: a(href="#", data-block="#items3"): span Изделия из камня
+                            .col-lg-4
+                                .header-navigation__form-search.text-right
+                                    .form-search
+                                        .form-search__inputs
+                                            input(placeholder="Поиск по каталогу").form-search__inputs-input.form-search__inputs-input_borderNot
+                                        button.form-search__btn: +icon('search')
+
+                        br
+                        .tabs__content
+                            .tabs__content-item.active#items1
+                                .header-navigation__category-list
+                                    ul
+                                        li: a(href='#') Возрождение
+                                        li: a(href='#') Габбро-Карелия
+                                        li: a(href='#') Гранатовый Амфиболит
+                                        li: a(href='#') Дымовский (Балтийский)
+                                        li: a(href='#') Исетский
+                                        li: a(href='#') Камбулатовский (Камбулакский)
+                                        li: a(href='#') Лисья Горка
+                                        li: a(href='#') Мансуровский
+                                        li: a(href='#') Осеевский
+                                        li: a(href='#') Сибирский (Ural Gray)
+                                        li: a(href='#') Суховязский
+                                        li: a(href='#') Южно-Султаевский
+                                        li: a(href='#') Емельяновский (Rosso Toledo)
+                                        li: a(href='#') Капустинский (Rosso Santiago)
+
+                                    ul
+                                        li: a(href="#") Междуреченский
+                                        li: a(href="#") Покостовский (Grey Ukraine)
+                                        li: a(href="#") Алмонд Мав (Almond Mauve)
+                                        li: a(href="#") Баттерфляй Грин (Butterfly Green)
+                                        li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
+                                        li: a(href="#") Мапл Ред G-562 (Maple Red)
+                                        li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
+                                        li: a(href="#") Парпл Грин (Purple Green)
+                                        li: a(href="#") Пич Ред G-687 (Peach Red)
+                                        li: a(href="#") Роял Вайт G-603 (Royal White)
+                                        li: a(href="#") Сансет Голд G-682 (Sunset Gold)
+                                        li: a(href="#") Сезам Блэк G-654 (Padang Dark)
+                                        li: a(href="#") Синди Грин (Cindy Green)
+                                        li: a(href="#") Чайна Грин G-674 (China Green)
+                                    ul
+                                        li: a(href="#") Шанкси Блэк G-777 (Shanxi Black)
+                                        li: a(href="#") Жельтау "Надежда"
+                                        li: a(href="#") Жельтау-2
+                                        li: a(href="#") Жельтау-5  Куртинский
+                                        li: a(href="#") Сары Тас
+                                        li: a(href="#") Абсолют Блэк (Absolute Black)
+                                        li: a(href="#") Айвори Браун (Ivory Brown)
+                                        li: a(href="#") Блэк Гэлэкси (Nero Star Galaxy)
+                                        li: a(href="#") Империал Ред (Imperial Red)
+                                        li: a(href="#") Кашмир Вайт (Kashmir White)
+                                        li: a(href="#") Мультиколор Ред (Multicolor Red)
+                                        li: a(href="#") Нью Империал Ред (New Imperial Red)
+                                        li: a(href="#") Парадизо (Paradiso)
+                            .tabs__content-item#items2
+                                .header-navigation__category-list
+                                    ul
+                                        li: a(href='#') Возрождение
+                                        li: a(href='#') Габбро-Карелия
+                                        li: a(href='#') Гранатовый Амфиболит
+                                        li: a(href='#') Дымовский (Балтийский)
+                                        li: a(href='#') Исетский
+                                        li: a(href='#') Камбулатовский (Камбулакский)
+                                        li: a(href='#') Лисья Горка
+                                        li: a(href='#') Мансуровский
+                                        li: a(href='#') Осеевский
+                                        li: a(href='#') Сибирский (Ural Gray)
+                                        li: a(href='#') Суховязский
+                                        li: a(href='#') Южно-Султаевский
+                                        li: a(href='#') Емельяновский (Rosso Toledo)
+                                        li: a(href='#') Капустинский (Rosso Santiago)
+
+                                    ul
+                                        li: a(href="#") Междуреченский
+                                        li: a(href="#") Покостовский (Grey Ukraine)
+                                        li: a(href="#") Алмонд Мав (Almond Mauve)
+                                        li: a(href="#") Баттерфляй Грин (Butterfly Green)
+                                        li: a(href="#") Бейн Брук Браун (G-664 Bainbrook Brown)
+                                        li: a(href="#") Мапл Ред G-562 (Maple Red)
+                                        li: a(href="#") Нью Венеция Голд Экстра (New Venecia Gold Extra)
+                                        li: a(href="#") Парпл Грин (Purple Green)
+                                        li: a(href="#") Пич Ред G-687 (Peach Red)
+                                        li: a(href="#") Роял Вайт G-603 (Royal White)
+                                        li: a(href="#") Сансет Голд G-682 (Sunset Gold)
+                                        li: a(href="#") Сезам Блэк G-654 (Padang Dark)
+                                        li: a(href="#") Синди Грин (Cindy Green)
+                                        li: a(href="#") Чайна Грин G-674 (China Green)
+                            .tabs__content-item#items3
+                                .header-navigation__category-list
+                                    ul
+                                        li: a(href='#') Возрождение
+                                        li: a(href='#') Габбро-Карелия
+                                        li: a(href='#') Гранатовый Амфиболит
+                                        li: a(href='#') Дымовский (Балтийский)
+                                        li: a(href='#') Исетский
+                                        li: a(href='#') Камбулатовский (Камбулакский)
+                                        li: a(href='#') Лисья Горка
+                                        li: a(href='#') Мансуровский
+                                        li: a(href='#') Осеевский
+                                        li: a(href='#') Сибирский (Ural Gray)
+                                        li: a(href='#') Суховязский
+                                        li: a(href='#') Южно-Султаевский
+                                        li: a(href='#') Емельяновский (Rosso Toledo)
+                                        li: a(href='#') Капустинский (Rosso Santiago)
+
+
+                .header__table
+                    .header__table-cell.header-desktop
+                        .header__sections
+                            .header__sections-section
+                                .mobile-list-anim.mobile-list-anim_menu
+                                    input(type="checkbox", id="header-bottom-toggleMenuMbl").mobile-list-anim__input
+                                    label.menuTopMobel(for="header-bottom-toggleMenuMbl")
+                                        span.menu-mobile
+                                            span.menu-mobile-hamburger.one
+                                            span.menu-mobile-hamburger.two
+                                            span.menu-mobile-hamburger.three
+                                        span.menu-text.hidden-xs-down Меню
+                            .header__sections-section
+                                .mobile-list-anim
+                                    input.off(type="checkbox", id="header-bottom-toggleMenuMbl1").mobile-list-anim__input
+                                    label.menuTopMobel(for="header-bottom-toggleMenuMbl1")
+                                        span.menu-icon: +icon('directory')
+                                        span.menu-text.hidden-xs-down Каталог
+
+                    .header__table-cell.header__table-cell_logo
+                        a(href="#").header__logo
+                            +img('assets/header/white-logo', 'png')
+
+                    .header__table-cell.text-right
+                        .header__sections
+                            .header__sections-section
+                                    select.select-inner.select-inner_mobile
+                                        option Челябинск
+                                        option item 1
+                                        option item 2
+                                        option item 3
+                                        option item 4
+                                        option item 5
+                                        option item 6
+                                        option item 7
+                            .header__sections.text-right
+                                .header__sections-section
+                                    a(href="#").header__phone
+                                        span.header__phone-title Контакты
+                                        span.db.header__phone-number 8-800-555-47-57
+
+                                .header__sections-section
+                                    button.btn.btn-orange(data-toggle="modal" data-target="#callback") Заказать звонок
+
+
+            -if(data)
+                .header-bottom
+                    .container
+                        .text-center
+
+                            .hidden-lg-up
+                                +img('assets/header/logo_min', 'png')
+                                br
+                                br
+
+                            .header-bottom__title.hidden-xs-down Производство изделий
+                                br
+                                |из гранита и мрамора
+
+                            .header-bottom__title.hidden-sm-up Производство
+                                br
+                                | изделий из гранита
+                                br
+                                |и мрамора
+
+                            .header-bottom__titleSub.hidden-sm-down Мы будем рады видеть Вас в числе наших
+                                br
+                                |счастливых клиентов
+
+                            .hidden-sm-down
+                                button.btn.btn-orange Перейти в каталог камня
+                                br
+                                br
+                                br
+
+                            .statistics.arrow-center.arrow-two
+                                .statistics__section
+                                    .statistics__item
+                                        .statistics__item-num 5+
+                                        .statistics__item-desc стран-поставщиков
+                                            br.hidden-md-down
+                                            |&nbsp;Россия, Украина, Китай, Индия, Турция
+
+                                .statistics__section
+                                    .statistics__item
+                                        .statistics__item-num 20
+                                        .statistics__item-desc лет профессиональной работы
+                                            br.hidden-md-down
+                                            |&nbsp;Собственное производство и галерея
+                                            br.hidden-md-down
+                                            |&nbsp;натурального камня
+
+                                .statistics__section
+                                    .statistics__item
+                                        .statistics__item-num 60+
+                                        .statistics__item-desc объектов монументальной
+                                            br.hidden-md-down
+                                            |&nbsp;скульптуры и памятников архитектуры
+
+                            .hidden-md-up
+                                br
+                                a(href="tel:88005554757").header-bottom__phone
+                                    i.s-phone-or
+                                    | 8-800-555-47-57
+                                button.btn.btn-orange Перейти в каталог камня
+
+                            .hidden-lg-up
+                                br.hidden-xs-down
+                                br
+
+
+                .hidden-md-down
+                    br
+                    br
+                    .text-center
+                        i.s-mouse
 
 
 

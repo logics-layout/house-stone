@@ -1,6 +1,7 @@
 extends main
 
 include ../components/item/item
+include ../components/products/products
 
 block head
     - var headData = {title: "Каталог"}
@@ -12,71 +13,9 @@ block content
 
         hr
         .products__sections.not-styleLink
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Облицовочные плиты
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Полосы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Слэбы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Полы
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Материалы для
-                            br
-                            span.products__item-label дорожного
-                            br
-                            span.products__item-label благоустройства
-                    ul.products__item-list
-                        li: a(href="#"): span Плитка из гранита
-                        li: a(href="#"): span Плитка из мрамора
-            .products__sections-section
-                .products__item
-                    .products__item-img
-                        .products__item-img-content
-                            span.products__item-label Входные группы
-                    ul.products__item-list
-                        li: a(href="#"): span  Ступени
-                        li: a(href="#"): span  Плиты
-                        li: a(href="#"): span  Балюстрада
-                        li: a(href="#"): span  Балясины и столбы
-                        li: a(href="#"): span  Перила
-                        li: a(href="#"): span  Основания и подбалясники
-            -for(var i = 0;i<5;i++)
+            -for(var i = 0; i<11;i++)
                 .products__sections-section
-                    .products__item
-                        .products__item-img
-                            .products__item-img-content
-                                span.products__item-label Материалы
-                        ul.products__item-list
-                            li: a(href="#"): span Плитка из гранита
-                            li: a(href="#"): span Плитка из мрамора
+                    +products(i)
 
         hr
         h2 Купить качественный гранит у производителя

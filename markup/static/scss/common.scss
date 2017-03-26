@@ -5,7 +5,7 @@ html, body {
   color: #1a1b1b;
   font-family: HelveticaNeueCyr, sans-serif;
   font-size: 16px;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 34px;
 }
 
@@ -583,7 +583,7 @@ body {
     width: 62px;
     &:hover{
       background-color: transparent;
-      fill: rgba(255, 255, 255, 0.71);
+      fill: $mainColor;
     }
     &.slick-prev{
       //padding-left: 48px;
@@ -693,7 +693,7 @@ body {
     fill: #fff;
     &:hover{
       background-color: transparent;
-      fill: #e2e2e2;
+      fill: $mainColor;
     }
   }
   &__section{
@@ -846,6 +846,7 @@ body {
     position: relative;
     overflow: hidden;
     &:hover{
+      border-color: #fff !important;
       .objects__item-content_noHover{
         bottom: -100%;
         opacity: 0;
@@ -933,4 +934,8 @@ body {
       }
     }
   }
+}
+
+.toggle-block{
+  display: none;
 }

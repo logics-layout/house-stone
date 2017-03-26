@@ -1,6 +1,8 @@
 doctype html
 html(class="no-js", lang="ru")
 
+
+    - var tpl = 'lp';
     include _mixin
     include ../components/head/head
     include ../components/header/header
@@ -37,26 +39,25 @@ html(class="no-js", lang="ru")
             .page__buffer
         .page__footer
 
-            div(style="overflow: hidden;")
-                .container
-                    .city.not-styleLink
-                        p.city__title Как нас найти:
-                        .city__list.arrow-beyond
-                            -for(var i = 0; i<10;i++)
-                                .city__list-section
-                                    .city__item
-                                        .city__item-icon.hidden-xs-down: +icon('map-label')
-                                        .city__item-desc
-                                            p.city__item-title
-                                                span.city__item-title-icon.hidden-sm-up
-                                                    +icon('map-label')
-                                                    |&nbsp;&nbsp;
-                                                |Ханты-Мансийск
-                                            p.city__item-text 628007, г. Ханты-Мансийск, ул. Строителей, 12б,
-                                                br
-                                                a(href='#') 8 (800) 555-47-57
-                                                br
-                                                a(href='#').city__item-link: span prod@domkam.ru
+            .container
+                .city.not-styleLink
+                    p.city__title Как нас найти:
+                    .city__list.arrow-beyond
+                        -for(var i = 0; i<10;i++)
+                            .city__list-section
+                                .city__item
+                                    .city__item-icon.hidden-xs-down: +icon('map-label')
+                                    .city__item-desc
+                                        p.city__item-title
+                                            span.city__item-title-icon.hidden-sm-up
+                                                +icon('map-label')
+                                                |&nbsp;&nbsp;
+                                            |Ханты-Мансийск
+                                        p.city__item-text 628007, г. Ханты-Мансийск, ул. Строителей, 12б,
+                                            br
+                                            a(href='#') 8 (800) 555-47-57
+                                            br
+                                            a(href='#').city__item-link: span prod@domkam.ru
 
 
             .callback-footer
