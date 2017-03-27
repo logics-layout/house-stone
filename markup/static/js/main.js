@@ -539,7 +539,6 @@ $('.toggle-btn').click(function(e){
     if(block[0]){
         block.stop().slideToggle(300);
     }
-
 });
 
 

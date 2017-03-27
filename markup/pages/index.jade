@@ -149,10 +149,8 @@ block content
 
     .index-products-slider.arrow-center.hidden-lg-up.not-styleLink
         -for(var i = 0; i<5;i++)
-            a(href="#").index-products-slider__section
-                span.db.products__item-img.products__item-img_index
-                    span.db.products__item-img-content
-                        span.products__item-label Облицовочные плиты
+            .index-products-slider__section
+                +products(i, true, true)
 
     .index-products.hidden-md-down.not-styleLink
         -for(var i = 0; i<11;i++)

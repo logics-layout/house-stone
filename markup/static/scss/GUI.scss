@@ -326,8 +326,10 @@ table{
   }
   .bs-caret{
     background-color: transparent;
-    line-height: 21px;
+    //line-height: 21px;
     right: 11px;
+    //width: auto;
+    //height: auto;
     .caret{
       border-top-color: #1a1b1b;
       border-top-width: 8px;
@@ -398,7 +400,8 @@ table{
         right: 0;
         margin: 0;
         top: 50%;
-        margin-top: -7px;
+        margin-top: -9px;
+        height: 7px;
         .caret {
           border-top-color: currentColor;
           border-top-width: 7px;
@@ -473,6 +476,7 @@ table{
       fill: currentColor;
       display: inline-block;
       vertical-align: middle;
+      pointer-events: none;
       svg{
         display: block;
       }

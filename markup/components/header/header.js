@@ -1,36 +1,3 @@
-// var toggleBtn = $('.toggle-btn');
-// toggleBtn.change(function () {
-//     toggleBtn.each(function(e){
-//         var _this = $(this),
-//             checked = this.checked,
-//             block = _this.data('block');
-//
-//         if(block){
-//             block = $(block);
-//             if(block[0]){
-//                 if(checked){
-//                     block.slideDown(300)
-//                 }else{
-//                     block.slideUp(300)
-//                 }
-//             }
-//         }
-//     });
-// });
-
-// var menuHeaderTopToggle = $('#header-bottom-toggleMenuMbl');
-// var menuHeaderTopList = $('.header-bottom-nav');
-//
-// menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
-// _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
-// $(document).click(function(e) {
-//     var target;
-//     target = $(e.target);
-//
-//     // toggleBtn
-//     console.log(target);
-// });
-
 var _fnMenuHeaderTop = function(toggle, list, slide) {
     var className, el, time;
     time = 300;
@@ -50,8 +17,7 @@ var menuHeaderTopToggle = $('#header-bottom-toggleMenuMble');
 var menuHeaderTopList = $('#navigationMenu');
 var menuHeaderTopToggle2 = $('#header-bottom-toggleMenuMble1');
 var menuHeaderTopList2 = $('#navigationCat');
-var menuHeaderTopToggle3 = $('#header-bottom-toggleMenuMbles');
-var menuHeaderTopList3 = $('#navigationMenu2');
+
 
 menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
 _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
@@ -59,8 +25,10 @@ _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
 menuHeaderTopToggle2.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);});
 _fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);
 
-menuHeaderTopToggle3.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList2, true);});
-_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList2, true);
+var menuHeaderTopToggle3 = $('#header-bottom-toggleMenuMbles');
+var menuHeaderTopList3 = $('#navigationMenu2');
+menuHeaderTopToggle3.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList3, true);});
+_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList3, true);
 
 var fnClearNav = function () {
     $('.header-navigation').removeClass('active');
@@ -125,36 +93,3 @@ $('.header-mobile__navigation-list a').click(function(e){
             .find('ul').slideUp(time);
     }
 });
-//
-// //
-// var header = $('.header'),
-//     headerBottomFix = $('.header-bottom-fix'),
-//     checkPad = true;
-//
-// window.headerHeight = _heightBlock(header);
-// var checkHeaderFix = function(){
-//     // return false;
-//
-//     if($(window).width() < 991){
-//
-//         if($(window).scrollTop() > headerBottomFix.offset().top){
-//             header.addClass('fix');
-//         }else{
-//             header.removeClass('fix');
-//         }
-//
-//         //     if(checkPad){
-//         //         header.addClass('fix');
-//         //         header.css({marginTop: "-"+headerHeight+"px"}).animate({marginTop: "0"}, 500);
-//         //         page__wrapper.css('padding-top', headerHeight+"px");
-//         //         checkPad = false;
-//         //     }
-//         // }else if(checkPad===false){
-//         //     checkPad = true;
-//         //     header.removeClass('fix');
-//         //     page__wrapper.css('padding-top', 0+"px");
-//         //     $('.header-slider-el').slick('slickNext');
-//         //     window.headerHeight = _heightBlock(header);
-//         // }
-//     }
-// };
