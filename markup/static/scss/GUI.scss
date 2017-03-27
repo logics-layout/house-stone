@@ -326,10 +326,8 @@ table{
   }
   .bs-caret{
     background-color: transparent;
-    //line-height: 21px;
+    line-height: 21px;
     right: 11px;
-    //width: auto;
-    //height: auto;
     .caret{
       border-top-color: #1a1b1b;
       border-top-width: 8px;
@@ -840,6 +838,7 @@ table{
   }
   &__section{
     padding: 0 20px;
+    outline: none;
   }
   &__item{
     &-num{

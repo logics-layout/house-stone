@@ -1,40 +1,8 @@
-var _fnMenuHeaderTop = function(toggle, list, slide) {
-    var className, el, time;
-    time = 300;
-    el = toggle.closest('.mobile-list-anim');
-    className = 'active';
-
-    if (toggle.prop("checked")) {
-        if(slide) list.stop().slideDown(time);
-        el.add(list).addClass(className);
-    } else {
-        if(slide) list.stop().slideUp(time);
-        el.add(list).removeClass(className);
-    }
-};
-
-var menuHeaderTopToggle = $('#header-bottom-toggleMenuMble');
-var menuHeaderTopList = $('#navigationMenu');
-var menuHeaderTopToggle2 = $('#header-bottom-toggleMenuMble1');
-var menuHeaderTopList2 = $('#navigationCat');
-
-
-menuHeaderTopToggle.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);});
-_fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
-
-menuHeaderTopToggle2.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);});
-_fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);
-
-var menuHeaderTopToggle3 = $('#header-bottom-toggleMenuMbles');
-var menuHeaderTopList3 = $('#navigationMenu2');
-menuHeaderTopToggle3.change(function() {_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList3, true);});
-_fnMenuHeaderTop(menuHeaderTopToggle3, menuHeaderTopList3, true);
-
-var fnClearNav = function () {
+var fnClearNav = function(){
     $('.header-navigation').removeClass('active');
     $('.mobile-list-anim__input').each(function(e){
         this.checked = false;
-    })
+    });
 };
 
 $('body').keydown(function(e) {
@@ -44,34 +12,47 @@ $('body').keydown(function(e) {
 });
 $('.header-navigation__clear').click(fnClearNav);
 
+var inputToggle = $('.mobile-list-anim__input');
 $(document).click(function(e) {
     var target = $(e.target);
 
-    var toggle = $('.header-desktop').find('.mobile-list-anim__input'),
-        checkedToggle = toggle.filter(':checked');
+    if(target.is(inputToggle)){
+        inputToggle.not(target).each(function () {
+            this.checked = false;
+        });
+        inputToggle.each(function(){
+            var _this = $(this),
+                id = _this.attr('id'),
+                block = $('[data-for="'+id+'"]'),
+                checked = target.is(_this) && this.checked,
+                fn = '',
+                arg = '';
 
-    toggle.each(function(){
-        var _this = $(this),
-            id = _this.attr('id'),
-            block = $('[data-for="'+id+'"]'),
-            checked = this.checked,
-            fn = 'removeClass';
+            if(block.closest('.header-desktop')[0]){
+                fn = 'removeClass';
+                arg = 'active';
+                if(checked) {
+                    fn = 'addClass';
+                }
+            }else if(block.closest('.header-mobile')[0]){
+                fn = 'slideUp';
+                arg = 300;
+                if(checked) {
+                    fn = 'slideDown';
+                }
+            }
 
-        if(checked){
-            fn = 'addClass';
-        }
+            if(checked){
+                block.on('mousewheel.chosen DOMMouseScroll.chosen', function(evt) {
+                    search_results_mousewheel(evt, block);
+                });
+            }else{
+                block.off('mousewheel.chosen DOMMouseScroll.chosen');
 
-        // console.log(fn, block)
-        block[fn]('active');
-    });
+            }
 
-    if (menuHeaderTopToggle[0]&&(!target.is(menuHeaderTopList) && !target.closest(menuHeaderTopList)[0]) && (!target.is(menuHeaderTopToggle) && !target.is('.menuTopMobel'))) {
-        menuHeaderTopToggle[0].checked = false;
-        _fnMenuHeaderTop(menuHeaderTopToggle, menuHeaderTopList, true);
-    }
-    if (menuHeaderTopToggle2[0]&&(!target.is(menuHeaderTopList2) && !target.closest(menuHeaderTopList2)[0]) && (!target.is(menuHeaderTopToggle2) && !target.is('.menuTopMobel'))) {
-        menuHeaderTopToggle2[0].checked = false;
-        _fnMenuHeaderTop(menuHeaderTopToggle2, menuHeaderTopList2, true);
+            block[fn](arg);
+        });
     }
 });
 
@@ -93,3 +74,17 @@ $('.header-mobile__navigation-list a').click(function(e){
             .find('ul').slideUp(time);
     }
 });
+
+window.headerHeightCheck = function () {return _heightBlock('.header-block');};
+var header__fix = $('.header__fix');
+function fixHeader(clear) {
+    var scrollTop = $(window).scrollTop(),
+        headerBlock = $('.header-block');
+    if(clear || headerHeight >= scrollTop){
+        headerBlock.removeClass('fix').css('height', 'auto');
+        header__fix.css('top', '0');
+    }else if(!headerBlock.hasClass('fix')){
+        headerBlock.addClass('fix').height(headerHeight);
+        header__fix.css('top', '-100%').animate({top: '0'}, 300);
+    }
+}

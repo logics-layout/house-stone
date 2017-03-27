@@ -33,3 +33,18 @@ $('[data-toggle]').click(toggleFn = function(){
         objFnToggle[toggle].call(this);
     }
 }).each(toggleFn);
+
+
+window.search_results_mousewheel = function(evt, block) {
+    var delta;
+    if (evt.originalEvent) {
+        delta = evt.originalEvent.deltaY || -evt.originalEvent.wheelDelta || evt.originalEvent.detail;
+    }
+    if (delta != null) {
+        evt.preventDefault();
+        if (evt.type === 'DOMMouseScroll') {
+            delta = delta * 40;
+        }
+        return block.scrollTop(delta + block.scrollTop());
+    }
+};

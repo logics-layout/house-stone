@@ -1,3 +1,27 @@
+.header-block{
+  .header__fix{
+
+  }
+  &.fix{
+    .header__fix{
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 20px 45px;
+      background-color: #fff;
+      background-size: cover;
+      background-position: center;
+      background-image: url('%=static=%assets/header/bg_inner.jpg');
+    }
+    .header__logo{
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+
 .header{
   background-size: cover;
   background-position: center;
@@ -230,7 +254,7 @@
     background-position: center;
     background-image: url('%=static=%assets/header/navigation_bg.jpg');
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     top: 0;
     left: 0;
     z-index: 9;
@@ -239,6 +263,7 @@
     margin-top: -50%;
     opacity: 0;
     visibility: hidden;
+    overflow: auto;
     @include tr;
     &.active{
       margin-top: 0;
